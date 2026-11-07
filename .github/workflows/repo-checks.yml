@@ -1,0 +1,55 @@
+name: repo-checks
+
+# Runs the checks engine on a schedule and on demand, then commits the
+# refreshed data/repo-checks.json so the Control Room dashboard stays current
+# and check_age_days keeps accumulating.
+#
+# Requires one repository secret:
+#   GH_TOKEN  — a fine-grained PAT (or classic token) with read access to the
+#               account's repositories. The automatic GITHUB_TOKEN is scoped to
+#               THIS repository only, so it cannot list/read the other repos
+#               the engine verifies.
+#
+# Note: GitHub Actions must be unblocked on the account (a billing hold
+# previously failed every job). Until then, run repo-checks/refresh.sh by hand
+# or from any cron-enabled host.
+
+on:
+  schedule:
+    - cron: "23 3 * * *"   # daily 03:23 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install requests
+        run: pip install "requests>=2.31,<3"
+
+      - name: Run repo-checks
+        working-directory: repo-checks
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GH_OWNER: axzoraharry
+        run: python3 repo_checks.py --apply
+
+      - name: Commit refreshed report
+        run: |
+          git config user.name "repo-checks[bot]"
+          git config user.email "repo-checks[bot]@users.noreply.github.com"
+          if [ -n "$(git status --porcelain repo-checks/data/repo-checks.json)" ]; then
+            git add repo-checks/data/repo-checks.json
+            git commit -m "chore(repo-checks): refresh check history ($(date -u +%F))"
+            git push
+          else
+            echo "no change — report already current"
+          fi

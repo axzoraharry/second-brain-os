@@ -87,6 +87,28 @@ never mutates a clone, clones anything, or writes the log unless you pass
 …so the table shows staleness of the **check itself**, not just the repo. Run
 `--apply` on a schedule (cron / GitHub Actions) to keep the history fresh.
 
+### Scheduled refresh
+
+- **GitHub Actions** — `.github/workflows/repo-checks.yml` runs daily and on
+  `workflow_dispatch`, then commits the refreshed report. It needs one secret,
+  `GH_TOKEN` (a PAT with read access to the account's repos — the automatic
+  `GITHUB_TOKEN` is scoped to this repo only). Actions must be unblocked on the
+  account (a billing hold previously failed every job).
+- **Any host** — `./refresh.sh` runs the engine with `--apply`, then commits and
+  pushes only if the report changed. Point a cron line at it anywhere with
+  python3 + git + push access:
+
+```bash
+23 3 * * * cd /path/to/second-brain-os/repo-checks && ./refresh.sh >> refresh.log 2>&1
+```
+
+### Hosting
+
+The dashboard is a single static file that fetches `data/repo-checks.json` by
+relative path, so it works from any static host (GitHub Pages, nginx, NAS,
+`python3 -m http.server`). On GitHub Pages it lives at
+`https://<owner>.github.io/second-brain-os/repo-checks/dashboard.html`.
+
 ## Config via environment
 
 | var | default | use |
