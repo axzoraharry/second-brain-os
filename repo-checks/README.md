@@ -13,6 +13,34 @@ This folder ships with:
 | `repo_checks.py` | the engine (stdlib `requests` only; no API keys needed) |
 | `tests/test_repo_checks.py` | 10 pure-logic tests — no network, no git mutation |
 | `data/repo-checks.json` | the last check result, **tracked** so history is visible over time |
+| `dashboard.html` | the **Control Room** frontend — single-file animated dashboard |
+| `DESIGN-PROMPT.md` | the detailed UI/UX redesign prompt the dashboard implements |
+
+## The Control Room dashboard
+
+`dashboard.html` is a self-contained (no build, no CDN) frontend that turns
+`data/repo-checks.json` into a live mission console:
+
+- **Hero tiles** with count-up numbers + a verdict donut.
+- **Automation pipeline** — Discover → Fetch → Check → Verdict → Log → Ship,
+  drawn from the engine's real lifecycle (amber "preview" in dry-run, green in
+  apply).
+- **4D card grid** — 3D tilt + cursor-tracking glare, FLIP reordering on
+  filter/sort, spring-eased entrance stagger.
+- Search (repo names), verdict filter chips, grid ↔ table toggle.
+- Reduced-motion + responsive (3 → 2 → 1 column) paths included.
+
+Serve it and open in a browser:
+
+```bash
+python3 -m http.server 8899        # from this folder
+# open http://127.0.0.1:8899/dashboard.html
+```
+
+It fetches `data/repo-checks.json`; if offline it falls back to an embedded
+sample. `DESIGN-PROMPT.md` is the full spec (tokens, motion inventory,
+automation workflow, accessibility) — feed it to any design generator to
+extend the experience.
 
 ## Verdicts
 

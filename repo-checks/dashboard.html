@@ -1,0 +1,563 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>repo-checks · Control Room</title>
+<style>
+:root{
+  --bg:#05070d;
+  --panel:rgba(255,255,255,.04);
+  --border:rgba(255,255,255,.08);
+  --txt:#e8edf6; --txt2:#8b96ad;
+  --ok:#34d399; --warn:#fbbf24; --unlic:#fb7185; --fail:#f87171;
+  --unknown:#a78bfa; --dead:#64748b; --fresh:#34d399; --aging:#fbbf24;
+  --stale:#fb923c; --abandoned:#f87171;
+  --spring:cubic-bezier(.16,1,.3,1);
+  --bounce:cubic-bezier(.34,1.56,.64,1);
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background:var(--bg); color:var(--txt); overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+/* ---------- aurora background ---------- */
+.aurora{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none}
+.aurora .blob{position:absolute;border-radius:50%;filter:blur(90px);opacity:.5;
+  will-change:transform;animation:drift 26s var(--spring) infinite alternate}
+.aurora .b1{width:56vw;height:56vw;left:-12vw;top:-18vw;background:radial-gradient(circle,#312e81,transparent 70%)}
+.aurora .b2{width:46vw;height:46vw;right:-10vw;top:8vw;background:radial-gradient(circle,#6d28d9,transparent 70%);animation-duration:34s;animation-delay:-8s}
+.aurora .b3{width:52vw;height:52vw;left:28vw;bottom:-24vw;background:radial-gradient(circle,#0891b2,transparent 70%);animation-duration:30s;animation-delay:-16s}
+@keyframes drift{from{transform:translate3d(0,0,0) scale(1)}to{transform:translate3d(6vw,-5vw,0) scale(1.15)}}
+
+.wrap{position:relative;z-index:1;max-width:1280px;margin:0 auto;padding:20px 22px 80px}
+
+/* ---------- glass ---------- */
+.glass{background:var(--panel);border:1px solid var(--border);
+  border-radius:22px;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
+  box-shadow:0 20px 60px -30px rgba(0,0,0,.9)}
+
+/* ---------- header ---------- */
+header{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:18px;
+  animation:drop .6s var(--spring) both}
+.logo{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;
+  background:linear-gradient(135deg,#22d3ee,#8b5cf6);font-weight:800;font-size:18px;color:#05070d}
+header h1{font-size:1.15rem;font-weight:700;letter-spacing:.3px}
+header .sub{color:var(--txt2);font-size:.85rem}
+.hmeta{margin-left:auto;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.chip{display:inline-flex;align-items:center;gap:7px;padding:6px 12px;border-radius:999px;
+  background:var(--panel);border:1px solid var(--border);font-size:.78rem;color:var(--txt2)}
+.chip b{color:var(--txt);font-family:var(--mono);font-weight:600}
+.pulse{width:8px;height:8px;border-radius:50%;background:var(--ok);
+  box-shadow:0 0 0 0 rgba(52,211,153,.5);animation:pulse 2s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(52,211,153,.5)}70%{box-shadow:0 0 0 8px rgba(52,211,153,0)}100%{box-shadow:0 0 0 0 rgba(52,211,153,0)}}
+.mode{font-weight:700}
+.mode.dry{color:var(--warn)} .mode.apply{color:var(--ok)}
+
+/* ---------- hero ---------- */
+.hero{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:16px}
+.tile{padding:18px;display:flex;flex-direction:column;gap:8px;position:relative;overflow:hidden;
+  animation:rise .6s var(--spring) both}
+.tile .n{font-family:var(--mono);font-size:2rem;font-weight:700;font-variant-numeric:tabular-nums}
+.tile .l{color:var(--txt2);font-size:.8rem;letter-spacing:.4px;text-transform:uppercase}
+.tile.at-risk{background:linear-gradient(160deg,rgba(251,113,133,.12),rgba(251,113,133,.02))}
+.tile.abandoned{background:linear-gradient(160deg,rgba(100,116,139,.14),rgba(100,116,139,.02))}
+.tile .glow{position:absolute;inset:0;background:radial-gradient(120px 60px at 80% 20%,rgba(255,255,255,.06),transparent 70%)}
+
+/* ---------- donut ---------- */
+.hero{grid-template-columns:repeat(4,1fr)}
+.donut-wrap{display:flex;align-items:center;gap:16px;padding:18px}
+.donut-wrap svg{flex:0 0 auto}
+.donut-legend{display:flex;flex-direction:column;gap:6px;font-size:.78rem}
+.donut-legend .row{display:flex;align-items:center;gap:8px;color:var(--txt2)}
+.donut-legend .sw{width:10px;height:10px;border-radius:3px}
+.donut-legend b{color:var(--txt);font-family:var(--mono);margin-left:auto;padding-left:10px}
+
+/* ---------- pipeline ---------- */
+.pipeline{padding:20px 18px;margin-bottom:16px;animation:rise .6s .1s var(--spring) both}
+.pipeline h2{font-size:.8rem;letter-spacing:1.2px;text-transform:uppercase;color:var(--txt2);margin-bottom:18px}
+.pipe{display:flex;align-items:center;gap:0}
+.node{flex:1;display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center;position:relative}
+.node .ic{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;
+  border:2px solid var(--border);background:var(--panel);font-size:18px;position:relative}
+.node .ic::after{content:"";position:absolute;inset:-2px;border-radius:50%;
+  border:2px solid transparent}
+.node.done .ic{border-color:var(--ok);background:rgba(52,211,153,.1)}
+.node.running .ic{border-color:var(--warn)}
+.node.running .ic::after{border-top-color:var(--warn);animation:spin 1s linear infinite}
+.node .lab{font-size:.74rem;color:var(--txt2)}
+.node.done .lab{color:var(--txt)}
+.node .st{font-size:.66rem;font-family:var(--mono);color:var(--txt2)}
+@keyframes spin{to{transform:rotate(360deg)}}
+.link{flex:0 0 34px;height:2px;background:var(--border);position:relative;overflow:visible;margin-bottom:34px}
+.link::after{content:"";position:absolute;left:0;top:0;height:100%;width:100%;
+  background:linear-gradient(90deg,transparent,var(--ok));transform:scaleX(0);transform-origin:left;
+  animation:draw 1.4s var(--spring) .4s forwards}
+.link .pkt{position:absolute;top:-2px;width:6px;height:6px;border-radius:50%;background:var(--ok);
+  box-shadow:0 0 8px var(--ok);animation:flow 2.2s linear .6s infinite}
+@keyframes draw{to{transform:scaleX(1)}}
+@keyframes flow{0%{left:0;opacity:0}10%{opacity:1}90%{opacity:1}100%{left:calc(100% - 6px);opacity:0}}
+
+/* ---------- toolbar ---------- */
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:16px}
+.search{flex:1;min-width:180px;position:relative}
+.search input{width:100%;padding:11px 14px 11px 38px;border-radius:14px;border:1px solid var(--border);
+  background:var(--panel);color:var(--txt);font-size:.9rem;outline:none;transition:border-color .2s}
+.search input:focus{border-color:#22d3ee}
+.search .mag{position:absolute;left:13px;top:50%;transform:translateY(-50%);color:var(--txt2)}
+.fchips{display:flex;gap:8px;flex-wrap:wrap}
+.fchip{padding:7px 12px;border-radius:999px;border:1px solid var(--border);background:var(--panel);
+  color:var(--txt2);font-size:.78rem;cursor:pointer;transition:all .25s var(--spring);font-family:inherit}
+.fchip:hover{color:var(--txt)}
+.fchip.on{color:#05070d;font-weight:700}
+.fchip .c{opacity:.7}
+.sorts{display:flex;gap:8px;align-items:center}
+.sorts select,.viewbtn{padding:9px 12px;border-radius:12px;border:1px solid var(--border);
+  background:var(--panel);color:var(--txt);font-size:.8rem;outline:none;font-family:inherit;cursor:pointer}
+.viewbtn.on{background:rgba(34,211,238,.15);border-color:#22d3ee}
+
+/* ---------- grid ---------- */
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;perspective:1200px}
+.card{padding:16px;position:relative;cursor:pointer;transform-style:preserve-3d;
+  transition:transform .35s var(--spring),border-color .3s,box-shadow .3s;will-change:transform}
+.card.enter{animation:rise .55s var(--spring) both}
+.card .glare{position:absolute;inset:0;border-radius:22px;pointer-events:none;opacity:0;
+  background:radial-gradient(360px circle at var(--gx,50%) var(--gy,50%),rgba(255,255,255,.10),transparent 55%);
+  transition:opacity .3s}
+.card:hover .glare{opacity:1}
+.card:hover{border-color:rgba(255,255,255,.16)}
+.card .top{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.card .nm{font-family:var(--mono);font-size:.92rem;font-weight:600;overflow:hidden;
+  text-overflow:ellipsis;white-space:nowrap;flex:1}
+.badge{padding:3px 10px;border-radius:999px;font-size:.7rem;font-weight:700;color:#05070d}
+.card .mid{display:flex;align-items:center;gap:14px;margin-bottom:10px}
+.ring{flex:0 0 auto}
+.ring text{font-family:var(--mono);font-size:8px;fill:var(--txt2)}
+.card .meta{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px}
+.tag{font-size:.72rem;padding:3px 9px;border-radius:8px;background:var(--panel);
+  border:1px solid var(--border);color:var(--txt2)}
+.tag.good{color:var(--ok)} .tag.bad{color:var(--fail)} .tag.unk{color:var(--unknown)}
+.dot{display:inline-flex;align-items:center;gap:5px;font-size:.72rem;color:var(--txt2)}
+.dot i{width:7px;height:7px;border-radius:50%;display:inline-block}
+.card .foot{display:flex;align-items:center;gap:8px;font-size:.72rem;color:var(--txt2);
+  border-top:1px solid var(--border);padding-top:10px}
+.card .foot b{font-family:var(--mono);color:var(--txt)}
+.chk-age.warn{color:var(--warn)} .chk-age.hot{color:var(--fail)}
+.spark{position:absolute;top:0;left:0;right:0;height:2px;border-radius:22px 22px 0 0;
+  background:linear-gradient(90deg,transparent,var(--vc),transparent);opacity:.35}
+
+/* ---------- table ---------- */
+.table{overflow:hidden;margin-bottom:16px}
+table{width:100%;border-collapse:collapse;font-size:.85rem}
+thead th{position:sticky;top:0;color:var(--txt2);font-weight:600;text-align:left;
+  padding:12px 14px;background:rgba(5,7,13,.7);backdrop-filter:blur(8px);border-bottom:1px solid var(--border)}
+tbody td{padding:11px 14px;border-bottom:1px solid var(--border);color:var(--txt)}
+tbody tr{animation:rise .5s var(--spring) both}
+tbody tr:hover td{background:rgba(255,255,255,.03)}
+
+.hidden{display:none!important}
+footer{margin-top:22px;color:var(--txt2);font-size:.74rem;text-align:center}
+@keyframes rise{from{opacity:0;transform:translate3d(0,22px,-40px)}to{opacity:1;transform:translate3d(0,0,0)}}
+@keyframes drop{from{opacity:0;transform:translate3d(0,-14px,0)}to{opacity:1;transform:none}}
+@media(max-width:960px){.hero{grid-template-columns:repeat(2,1fr)}.grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:640px){.grid{grid-template-columns:1fr}.hero{grid-template-columns:1fr}
+  .pipe{flex-direction:column;gap:0}.link{flex:0 0 auto;width:2px;height:26px;margin:0}
+  .link::after{transform:scaleY(0);transform-origin:top}.link::after{animation-name:drawY}
+  .link .pkt{animation-name:flowY}}
+@keyframes drawY{to{transform:scaleY(1)}}
+@keyframes flowY{0%{top:0;opacity:0}10%{opacity:1}90%{opacity:1}100%{top:calc(100% - 6px);opacity:0}}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.15s!important}
+}
+</style>
+</head>
+<body>
+<div class="aurora" aria-hidden="true"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div></div>
+<div class="wrap">
+  <header>
+    <div class="logo">◇</div>
+    <div>
+      <h1>repo-checks · Control Room</h1>
+      <div class="sub" id="subtitle">loading…</div>
+    </div>
+    <div class="hmeta">
+      <span class="chip"><span class="pulse"></span> live</span>
+      <span class="chip">UTC <b id="clock">--:--:--</b></span>
+      <span class="chip">engine <b>repo-checks v1</b></span>
+      <span class="chip mode" id="mode">…</span>
+    </div>
+  </header>
+
+  <section class="hero" id="hero"></section>
+
+  <section class="glass pipeline" id="pipeline"></section>
+
+  <div class="toolbar">
+    <div class="search"><span class="mag">🔍</span><input id="q" type="search" placeholder="Search repos…" autocomplete="off"></div>
+    <div class="fchips" id="chips"></div>
+    <div class="sorts">
+      <select id="sort">
+        <option value="risk">sort: risk</option>
+        <option value="age-desc">age: newest</option>
+        <option value="age-asc">age: oldest</option>
+        <option value="name">name</option>
+      </select>
+      <button class="viewbtn on" id="vGrid" title="grid view">▦</button>
+      <button class="viewbtn" id="vTable" title="table view">☰</button>
+    </div>
+  </div>
+
+  <div class="grid" id="grid"></div>
+  <div class="glass table hidden" id="tableWrap"></div>
+
+  <footer id="foot"></footer>
+</div>
+<script type="application/json" id="repo-data">__REPO_DATA__</script>
+<script>
+"use strict";
+const $ = s => document.querySelector(s);
+const REDUCED = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+const VC = { ok:"#34d399", warn:"#fbbf24", unlicensed:"#fb7185", fail:"#f87171",
+  unknown:"#a78bfa", abandoned:"#64748b", archived:"#64748b", disabled:"#64748b" };
+const ST = { fresh:"#34d399", aging:"#fbbf24", stale:"#fb923c", abandoned:"#f87171", unknown:"#64748b" };
+
+let REPORT = null, repos = [], view = "grid", activeVerdicts = new Set(), sortBy = "risk";
+
+/* ---------------- data load ---------------- */
+function embeddedData(){
+  const el = $("#repo-data");
+  if(!el) return null;
+  const t = el.textContent.trim();
+  if(!t || t.startsWith("__REPO")) return null;
+  try { return JSON.parse(t); } catch(e){ return null; }
+}
+const SAMPLE = {
+  owner:"axzoraharry", generated_at:"2026-11-07T00:00:00Z", mode:"dry-run",
+  summary:{ok:1,fail:22,unlicensed:1,abandoned:36},
+  repos:[
+    {name:"axzora-chat",full_name:"axzoraharry/axzora-chat",verdict:"ok",
+     staleness:{status:"fresh",days:0,label:"0d"},checks:{license:{status:"pass",detail:"MIT"},
+     readme:{status:"pass"},ci:{status:"pass"},local_sync:{status:"skip",detail:"not cloned"}},
+     check_age_days:0.1},
+    {name:"axzora-os",full_name:"axzoraharry/axzora-os",verdict:"unlicensed",
+     staleness:{status:"fresh",days:0,label:"0d"},checks:{license:{status:"fail",detail:"no licence"},
+     readme:{status:"pass"},ci:{status:"pass"},local_sync:{status:"pass",detail:"in sync"}},
+     check_age_days:0.1},
+    {name:"happy-metaverse",full_name:"axzoraharry/happy-metaverse",verdict:"abandoned",
+     staleness:{status:"abandoned",days:544,label:"544d"},checks:{license:{status:"fail",detail:"no licence"},
+     readme:{status:"pass"},ci:{status:"fail"},local_sync:{status:"pass",detail:"in sync"}},
+     check_age_days:0.1},
+    {name:"luna",full_name:"axzoraharry/luna",verdict:"abandoned",
+     staleness:{status:"abandoned",days:371,label:"371d"},checks:{license:{status:"pass",detail:"GPL-3.0"},
+     readme:{status:"pass"},ci:{status:"fail"},local_sync:{status:"pass",detail:"in sync"}},
+     check_age_days:0.1},
+  ]
+};
+async function load(){
+  let data = null;
+  try {
+    const r = await fetch("data/repo-checks.json", {cache:"no-store"});
+    if(r.ok) data = await r.json();
+  } catch(e){}
+  if(!data) data = embeddedData();
+  if(!data) data = SAMPLE;
+  REPORT = data;
+  repos = data.repos || [];
+  boot();
+}
+
+/* ---------------- helpers ---------------- */
+function fmt(n){ return Number.isFinite(n) ? Number(n).toLocaleString() : "—"; }
+function ageLabel(d){
+  if(!Number.isFinite(d)) return "—";
+  if(d<1) return (d*24).toFixed(0)+"h";
+  return d.toFixed(0)+"d";
+}
+function checkAgeClass(d){ if(!Number.isFinite(d)) return ""; if(d>7) return "hot"; if(d>1) return "warn"; return ""; }
+function esc(s){ return String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c])); }
+function verdictSum(){
+  const s = {ok:0,warn:0,fail:0,unlicensed:0,unknown:0,abandoned:0,archived:0,disabled:0};
+  repos.forEach(r => { s[r.verdict]=(s[r.verdict]||0)+1; });
+  return s;
+}
+
+/* ---------------- header ---------------- */
+function renderHeader(){
+  $("#subtitle").textContent = `${REPORT.owner} · ${repos.length} repos · generated ${(REPORT.generated_at||"").slice(0,10)}`;
+  const m = $("#mode");
+  const isDry = (REPORT.mode||"").toLowerCase() !== "apply";
+  m.textContent = isDry ? "dry-run" : "apply";
+  m.className = "chip mode " + (isDry ? "dry" : "apply");
+  tick(); setInterval(tick, 1000);
+}
+function tick(){
+  const d = new Date();
+  $("#clock").textContent = d.toISOString().slice(11,19);
+}
+
+/* ---------------- hero ---------------- */
+function renderHero(){
+  const s = verdictSum();
+  const total = repos.length;
+  const atRisk = (s.fail||0)+(s.unlicensed||0)+(s.unknown||0);
+  const tiles = [
+    {n:total, l:"Repositories", c:"#22d3ee"},
+    {n:s.ok||0, l:"Healthy", c:"#34d399"},
+    {n:atRisk, l:"At risk", c:"#fb7185", cls:"at-risk"},
+    {n:s.abandoned||0, l:"Abandoned", c:"#64748b", cls:"abandoned"},
+  ];
+  const donut = donutSVG(s, 120);
+  $("#hero").innerHTML = tiles.map((t,i)=>`
+    <div class="tile glass ${t.cls||""}" style="animation-delay:${i*60}ms">
+      <div class="glow"></div>
+      <div class="n" data-count="${t.n}" style="color:${t.c}">0</div>
+      <div class="l">${t.l}</div>
+    </div>`).join("") +
+    `<div class="donut-wrap glass" style="animation-delay:240ms">${donut}</div>`;
+  countUp();
+}
+function donutSVG(s, size){
+  const r = size/2 - 12, C = 2*Math.PI*r, entries = Object.entries(s).filter(([k,v])=>v>0);
+  let off = 0, arcs = "";
+  entries.forEach(([k,v],i)=>{
+    const frac = v/repos.length, len = frac*C;
+    const col = VC[k]||"#64748b";
+    arcs += `<circle r="${r}" cx="${size/2}" cy="${size/2}" fill="none" stroke="${col}"
+      stroke-width="11" stroke-linecap="round" stroke-dasharray="${len} ${C-len}"
+      stroke-dashoffset="${-off}" transform="rotate(-90 ${size/2} ${size/2})"
+      style="transition:stroke-dashoffset 1s var(--spring) ${i*80}ms"></circle>`;
+    off += len;
+  });
+  const legend = entries.map(([k,v])=>`
+    <div class="row"><span class="sw" style="background:${VC[k]||"#64748b"}"></span>${k}<b>${v}</b></div>`).join("");
+  return `<svg width="${size}" height="${size}" viewBox="0 0 ${size} ${size}">
+    <circle r="${r}" cx="${size/2}" cy="${size/2}" fill="none" stroke="rgba(255,255,255,.06)" stroke-width="11"/>
+    ${arcs}</svg><div class="donut-legend">${legend}</div>`;
+}
+function countUp(){
+  document.querySelectorAll("[data-count]").forEach(el=>{
+    const target = +el.dataset.count;
+    if(REDUCED){ el.textContent = target.toLocaleString(); return; }
+    const t0 = performance.now(), dur = 800;
+    const iv = setInterval(()=>{
+      const p = Math.min(1,(performance.now()-t0)/dur), e = 1-Math.pow(1-p,3);
+      el.textContent = Math.round(target*e).toLocaleString();
+      if(p>=1){ clearInterval(iv); el.textContent = target.toLocaleString(); }
+    }, 16);
+  });
+}
+
+/* ---------------- pipeline ---------------- */
+function renderPipeline(){
+  const isDry = (REPORT.mode||"").toLowerCase() !== "apply";
+  const nodes = [
+    {ic:"🔭", lab:"Discover", st:"GitHub API"},
+    {ic:"⬇️", lab:"Fetch", st:"readme · CI"},
+    {ic:"🧪", lab:"Check", st:"7 rules"},
+    {ic:"⚖️", lab:"Verdict", st:"ok/fail/unk"},
+    {ic:"🗄️", lab:"Log", st:"repo-checks.json"},
+    {ic:"🚀", lab:"Ship", st: isDry ? "preview only" : "commit"},
+  ];
+  $("#pipeline").innerHTML = `<h2>Automation pipeline</h2><div class="pipe">` +
+    nodes.map((n,i)=>{
+      const cls = n.state = (isDry && i===5) ? "pending" : "done";
+      return `<div class="node ${cls==="done"?"done":""}">
+        <div class="ic">${n.ic}</div>
+        <div class="lab">${n.lab}</div>
+        <div class="st">${n.st}</div>
+      </div>` + (i<nodes.length-1?`<div class="link"><span class="pkt"></span></div>`:"");
+    }).join("") + `</div>`;
+}
+
+/* ---------------- chips ---------------- */
+function renderChips(){
+  const s = verdictSum();
+  const order = ["all","ok","warn","unlicensed","fail","unknown","abandoned","archived","disabled"];
+  $("#chips").innerHTML = order.filter(k=>k==="all"||(s[k]>0)).map(k=>{
+    const count = k==="all" ? repos.length : (s[k]||0);
+    const col = k==="all" ? "#94a3b8" : (VC[k]||"#64748b");
+    return `<button class="fchip ${activeVerdicts.has(k)?"on":""}" data-v="${k}"
+      style="${activeVerdicts.has(k)?`background:${col};border-color:${col}`:""}">
+      ${k} <span class="c">${count}</span></button>`;
+  }).join("");
+  document.querySelectorAll(".fchip").forEach(b=>b.onclick=()=>{
+    const v = b.dataset.v;
+    if(v==="all"){ activeVerdicts.clear(); activeVerdicts.add("all"); }
+    else {
+      activeVerdicts.delete("all");
+      if(activeVerdicts.has(v)) activeVerdicts.delete(v); else activeVerdicts.add(v);
+      if(activeVerdicts.size===0) activeVerdicts.add("all");
+    }
+    renderChips(); renderGrid();
+  });
+}
+
+/* ---------------- filtering ---------------- */
+function filtered(){
+  let out = repos;
+  if(!activeVerdicts.has("all") && activeVerdicts.size){
+    out = out.filter(r=>activeVerdicts.has(r.verdict));
+  }
+  const query = (document.getElementById("q")?.value || "").trim().toLowerCase();
+  if(query){
+    out = out.filter(r=> String(r.name||"").toLowerCase().includes(query));
+  }
+  const ord = {ok:0,warn:1,unknown:2,unlicensed:3,fail:4,abandoned:5,archived:6,disabled:7};
+  out = out.slice();
+  if(sortBy==="name") out.sort((a,b)=>a.name.localeCompare(b.name));
+  else if(sortBy==="age-asc") out.sort((a,b)=>(a.staleness.days??0)-(b.staleness.days??0));
+  else if(sortBy==="age-desc") out.sort((a,b)=>(b.staleness.days??0)-(a.staleness.days??0));
+  else out.sort((a,b)=>(ord[a.verdict]??9)-(ord[b.verdict]??9));
+  return out;
+}
+
+/* ---------------- card ---------------- */
+function ringSVG(status, days){
+  const size = 26, r = 10, C = 2*Math.PI*r, frac = Number.isFinite(days) ? Math.min(1,(days||0)/365) : 0;
+  const col = ST[status]||"#64748b";
+  return `<svg class="ring" width="${size}" height="${size}" viewBox="0 0 ${size} ${size}">
+    <circle r="${r}" cx="${size/2}" cy="${size/2}" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="3"/>
+    <circle r="${r}" cx="${size/2}" cy="${size/2}" fill="none" stroke="${col}" stroke-width="3"
+      stroke-linecap="round" stroke-dasharray="${frac*C} ${C}" transform="rotate(-90 ${size/2} ${size/2})"/>
+  </svg>`;
+}
+function dot(status){
+  const c = status==="pass"?"#34d399":status==="fail"?"#f87171":status==="unknown"?"#a78bfa":"#475569";
+  return `<i style="background:${c}"></i>`;
+}
+function makeCard(r, enter){
+  const lic = r.checks?.license || {};
+  const rd = r.checks?.readme?.status || "skip";
+  const ci = r.checks?.ci?.status || "skip";
+  const ls = r.checks?.local_sync || {};
+  const lsTxt = ls.status==="pass" ? "in sync"
+    : ls.status==="fail" ? `behind ${ls.behind??""}`.trim()
+    : ls.status==="unknown" ? (ls.detail||"unknown") : "—";
+  const ca = r.check_age_days;
+  const vc = VC[r.verdict]||"#64748b";
+  const el = document.createElement("article");
+  el.className = "card glass" + (enter?" enter":"");
+  el.dataset.name = r.name;
+  el.style.setProperty("--vc", vc);
+  el.innerHTML = `
+    <div class="glare"></div>
+    <div class="spark"></div>
+    <div class="top">
+      <span class="nm" title="${esc(r.full_name)}">${esc(r.name)}</span>
+      <span class="badge" style="background:${vc}">${r.verdict}</span>
+    </div>
+    <div class="mid">
+      ${ringSVG(r.staleness.status, r.staleness.days)}
+      <div class="meta">
+        <span class="tag ${lic.status==="pass"?"good":lic.status==="fail"?"bad":"unk"}">${esc(lic.detail||lic.status||"—")}</span>
+        <span class="dot">${dot(rd)} README</span>
+        <span class="dot">${dot(ci)} CI</span>
+      </div>
+    </div>
+    <div class="foot">
+      <span>local <b>${esc(lsTxt)}</b></span>
+      <span style="margin-left:auto">checked <b class="chk-age ${checkAgeClass(ca)}">${Number.isFinite(ca) ? ageLabel(ca) : "—"} ago</b></span>
+    </div>`;
+  if(!REDUCED){
+    el.addEventListener("mousemove", e=>{
+      const r = el.getBoundingClientRect();
+      const x = (e.clientX-r.left)/r.width, y = (e.clientY-r.top)/r.height;
+      el.style.setProperty("--gx", (x*100)+"%");
+      el.style.setProperty("--gy", (y*100)+"%");
+      el.style.transform = `perspective(900px) rotateY(${(x-0.5)*12}deg) rotateX(${(0.5-y)*10}deg) translateZ(10px)`;
+    });
+    el.addEventListener("mouseleave", ()=> el.style.transform = "");
+  }
+  el.addEventListener("click", ()=> detail(r, el));
+  return el;
+}
+function detail(r){
+  const lines = [];
+  lines.push(`verdict: ${r.verdict}`);
+  lines.push(`pushed: ${r.staleness.label} (${Number.isFinite(r.staleness.days) ? r.staleness.days+"d" : "never"})`);
+  lines.push(`licence: ${r.checks.license?.detail || "—"}`);
+  lines.push(`local: ${r.checks.local_sync?.detail || "—"}`);
+  if(r.fails?.length) lines.push(`fails: ${r.fails.join(", ")}`);
+  if(r.unknowns?.length) lines.push(`unknowns: ${r.unknowns.join(", ")}`);
+  alert(`${r.full_name}\n\n${lines.join("\n")}`);
+}
+
+/* ---------------- grid + FLIP ---------------- */
+function renderGrid(){
+  const grid = $("#grid");
+  const oldRects = {};
+  grid.querySelectorAll(".card").forEach(e=> oldRects[e.dataset.name]=e.getBoundingClientRect());
+  const frag = document.createDocumentFragment();
+  const list = filtered();
+  const first = !Object.keys(oldRects).length;
+  list.forEach((r,i)=>{ const c = makeCard(r, first); c.style.animationDelay=(i*24)+"ms"; frag.appendChild(c); });
+  grid.replaceChildren(frag);
+  if(!REDUCED){
+    grid.querySelectorAll(".card").forEach(el=>{
+      const old = oldRects[el.dataset.name]; if(!old) return;
+      const n = el.getBoundingClientRect();
+      const dx = old.left-n.left, dy = old.top-n.top;
+      if(dx||dy){
+        el.style.transition="none"; el.style.animation="none";
+        el.style.transform=`translate3d(${dx}px,${dy}px,0)`;
+        void el.offsetWidth; // force reflow so the transition runs (rAF is throttled here)
+        el.style.transition="transform .45s var(--spring)";
+        el.style.transform="";
+      }
+    });
+  }
+  $("#foot").textContent = `showing ${list.length} of ${repos.length} repos · ${activeVerdicts.has("all")?"all verdicts":[...activeVerdicts].join(" + ")}`;
+}
+
+/* ---------------- table ---------------- */
+function renderTable(){
+  const list = filtered();
+  const vc = r=>VC[r.verdict]||"#64748b";
+  $("#tableWrap").innerHTML = `<table><thead><tr>
+    <th>repo</th><th>verdict</th><th>licence</th><th>readme</th><th>ci</th><th>age</th><th>local</th><th>check age</th>
+  </tr></thead><tbody>` +
+  list.map(r=>{
+    const lic=r.checks?.license?.detail||"—";
+    const ls=r.checks?.local_sync;
+    const lsTxt = ls?.status==="pass"?"in sync":ls?.status==="fail"?`behind ${ls.behind??""}`.trim():ls?.detail||"—";
+    const ca=r.check_age_days;
+    return `<tr>
+      <td style="font-family:var(--mono)">${esc(r.name)}</td>
+      <td><span class="badge" style="background:${vc(r)}">${r.verdict}</span></td>
+      <td>${esc(lic)}</td>
+      <td>${dot(r.checks?.readme?.status)}</td>
+      <td>${dot(r.checks?.ci?.status)}</td>
+      <td style="color:${ST[r.staleness.status]||"#64748b"}">${r.staleness.label}</td>
+      <td>${esc(lsTxt)}</td>
+      <td class="${checkAgeClass(ca)}">${Number.isFinite(ca) ? ageLabel(ca) : "—"}</td>
+    </tr>`;
+  }).join("") + `</tbody></table>`;
+}
+
+/* ---------------- view toggle ---------------- */
+function setView(v){
+  view = v;
+  $("#vGrid").classList.toggle("on", v==="grid");
+  $("#vTable").classList.toggle("on", v==="table");
+  $("#grid").classList.toggle("hidden", v!=="grid");
+  $("#tableWrap").classList.toggle("hidden", v!=="table");
+  if(v==="grid") renderGrid(); else renderTable();
+}
+
+/* ---------------- boot ---------------- */
+function boot(){
+  activeVerdicts.add("all");
+  renderHeader(); renderHero(); renderPipeline(); renderChips(); renderGrid();
+  $("#q").addEventListener("input", ()=>{ if(view==="grid") renderGrid(); else renderTable(); });
+  $("#sort").addEventListener("change", e=>{ sortBy=e.target.value; if(view==="grid") renderGrid(); else renderTable(); });
+  $("#vGrid").addEventListener("click", ()=>setView("grid"));
+  $("#vTable").addEventListener("click", ()=>setView("table"));
+}
+load();
+</script>
+</body>
+</html>
