@@ -1,0 +1,3684 @@
+{
+  "engine": "repo-checks",
+  "version": 1,
+  "owner": "axzoraharry",
+  "generated_at": "2026-11-07T11:52:27Z",
+  "mode": "apply",
+  "mode_note": "results written to data/repo-checks.json",
+  "summary": {
+    "ok": 1,
+    "fail": 22,
+    "unlicensed": 1,
+    "abandoned": 36
+  },
+  "repos": [
+    {
+      "name": "axzora-chat",
+      "full_name": "axzoraharry/axzora-chat",
+      "fork": false,
+      "archived": false,
+      "disabled": false,
+      "private": true,
+      "default_branch": "main",
+      "language": "Kotlin",
+      "pushed_at": "2026-11-07T10:05:41Z",
+      "staleness": {
+        "status": "fresh",
+        "days": 0.07416187469907407,
+        "label": "0d"
+      },
+      "verdict": "ok",
+      "fails": [],
+      "unknowns": [],
+      "warns": [],
+      "checks": {
+        "license": {
+          "status": "pass",
+          "detail": "MIT"
+        },
+        "readme": {
+          "status": "pass",
+          "detail": "present"
+        },
+        "ci": {
+          "status": "pass",
+          "detail": "3 workflow(s)"
+        },
+        "description": {
+          "status": "pass",
+          "detail": "Axzora Chat \u2014 rebranded fork of whisperbit-labs/zemzeme-andr"
+        },
+        "staleness": {
+          "status": "fresh",
+          "detail": "0d",
+          "days": 0.07416187469907407
+        },
+        "local_checkout": {
+          "status": "skip",
+          "detail": "not cloned"
+        },
+        "local_sync": {
+          "status": "skip",
+          "detail": "not cloned locally",
+          "head": null,
+          "fetch_age_days": null
+        }
+      },
+      "checked_at": "2026-11-07T11:52:27Z",
+      "previously_checked_at": null,
+      "check_age_days": null
+    },
+    {
+      "name": "axzora-docs",
+      "full_name": "axzoraharry/axzora-docs",
+      "fork": false,
+      "archived": false,
+      "disabled": false,
+      "private": false,
+      "default_branch": "main",
+      "language": "SCSS",
+      "pushed_at": "2026-11-07T08:29:25Z",
+      "staleness": {
+        "status": "fresh",
+        "days": 0.14102700049768518,
+        "label": "0d"
+      },
+      "verdict": "fail",
+      "fails": [
+        "license",
+        "readme",
+        "local_sync"
+      ],
+      "unknowns": [],
+      "warns": [
+        "description"
+      ],
+      "checks": {
+        "license": {
+          "status": "fail",
+          "detail": "no licence"
+        },
+        "readme": {
+          "status": "fail",
+          "detail": "no README"
+        },
+        "ci": {
+          "status": "pass",
+          "detail": "1 workflow(s)"
+        },
+        "description": {
+          "status": "warn",
+          "detail": "empty"
+        },
+        "staleness": {
+          "status": "fresh",
+          "detail": "0d",
+          "days": 0.14102700049768518
+        },
+        "local_checkout": {
+          "status": "pass",
+          "detail": "cloned"
+        },
+        "local_sync": {
+          "status": "fail",
+          "detail": "behind by 3",
+          "head": "4d88226d6efc",
+          "fetch_age_days": 13.57235749431713
+        }
+      },
+      "checked_at": "2026-11-07T11:52:27Z",
+      "previously_checked_at": null,
+      "check_age_days": null
+    },
+    {
+      "name": "axzora-server",
+      "full_name": "axzoraharry/axzora-server",
+      "fork": false,
+      "archived": false,
+      "disabled": false,
+      "private": true,
+      "default_branch": "main",
+      "language": "JavaScript",
+      "pushed_at": "2026-11-07T08:29:11Z",
+      "staleness": {
+        "status": "fresh",
+        "days": 0.14120454887731482,
+        "label": "0d"
+      },
+      "verdict": "fail",
+      "fails": [
+        "license",
+        "readme",
+        "ci",
+        "local_sync"
+      ],
+      "unknowns": [],
+      "warns": [],
+      "checks": {
+        "license": {
+          "status": "fail",
+          "detail": "no licence"
+        },
+        "readme": {
+          "status": "fail",
+          "detail": "no README"
+        },
+        "ci": {
+          "status": "fail",
+          "detail": "no CI workflows"
+        },
+        "description": {
+          "status": "pass",
+          "detail": "Axzora OS backend - family location, private chat, Happy Pai"
+        },
+        "staleness": {
+          "status": "fresh",
+          "detail": "0d",
+          "days": 0.14120454887731482
+        },
+        "local_checkout": {
+          "status": "pass",
+          "detail": "cloned"
+        },
+        "local_sync": {
+          "status": "fail",
+          "detail": "behind by 10",
+          "head": "dc2d6f712880",
+          "fetch_age_days": 13.57225084625
+        }
+      },
+      "checked_at": "2026-11-07T11:52:27Z",
+      "previously_checked_at": null,
+      "check_age_days": null
+    },
+    {
+      "name": "axzora-os",
+      "full_name": "axzoraharry/axzora-os",
+      "fork": false,
+      "archived": false,
+      "disabled": false,
+      "private": true,
+      "default_branch": "main",
+      "language": "Kotlin",
+      "pushed_at": "2026-11-07T08:27:53Z",
+      "staleness": {
+        "status": "fresh",
+        "days": 0.14212145442129628,
+        "label": "0d"
+      },
+      "verdict": "unlicensed",
+      "fails": [
+        "license"
+      ],
+      "unknowns": [],
+      "warns": [],
+      "checks": {
+        "license": {
+          "status": "fail",
+          "detail": "no licence"
+        },
+        "readme": {
+          "status": "pass",
+          "detail": "present"
+        },
+        "ci": {
+          "status": "pass",
+          "detail": "1 workflow(s)"
+        },
+        "description": {
+          "status": "pass",
+          "detail": "AxzoraOS \u2014 the Android shell (Kotlin/Compose + HUD). Source "
+        },
+        "staleness": {
+          "status": "fresh",
+          "detail": "0d",
+          "days": 0.14212145442129628
+        },
+        "local_checkout": {
+          "status": "pass",
+          "detail": "cloned"
+        },
+        "local_sync": {
+          "status": "pass",
+          "detail": "in sync",
+          "head": "13d0eb4f6e1f",
+          "fetch_age_days": 13.572319452557869
+        }
+      },
+      "checked_at": "2026-11-07T11:52:27Z",
+      "previously_checked_at": null,
+      "check_age_days": null
+    },
+    {
+      "name": "AxzoraOS",
+      "full_name": "axzoraharry/AxzoraOS",
+      "fork": false,
+      "archived": false,
+      "disabled": false,
+      "private": false,
+      "default_branch": "main",
+      "language": "Python",
+      "pushed_at": "2026-10-29T14:36:14Z",
+      "staleness": {
+        "status": "fresh",
+        "days": 8.886341754143519,
+        "label": "9d"
+      },
+      "verdict": "fail",
+      "fails": [
+        "license",
+        "ci"
+      ],
+      "unknowns": [],
+      "warns": [],
+      "checks": {
+        "license": {
+          "status": "fail",
+          "detail": "no licence"
+        },
+        "readme": {
+          "status": "pass",
+          "detail": "present"
+        },
+        "ci": {
+          "status": "fail",
+          "detail": "no CI workflows"
+        },
+        "description": {
+          "status": "pass",
+          "detail": "AxzoraOS source code"
+        },
+        "staleness": {
+          "status": "fresh",
+          "detail": "9d",
+          "days": 8.886341754143519
+        },
+        "local_checkout": {
+          "status": "skip",
+          "detail": "not cloned"
+        },
+        "local_sync": {
+          "status": "skip",
+          "detail": "not cloned locally",
+          "head": null,
+          "fetch_age_days": null
+        }
+      },
+      "checked_at": "2026-11-07T11:52:27Z",
+      "previously_checked_at": null,
+      "check_age_days": null
+    },
+    {
+      "name": "satyug-os",
+      "full_name": "axzoraharry/satyug-os",
+      "fork": false,
+      "archived": false,
+      "disabled": false,
+      "private": true,
+      "default_branch": "main",
+      "language": "JavaScript",
+      "pushed_at": "2026-10-27T12:33:44Z",
+      "staleness": {
+        "status": "fresh",
+        "days": 10.971425371516204,
+        "label": "11d"
+      },
+      "verdict": "fail",
+      "fails": [
+        "license",
+        "ci"
+      ],
+      "unknowns": [],
+      "warns": [],
+      "checks": {
+        "license": {
+          "status": "fail",
+          "detail": "no licence"
+        },
+        "readme": {
+          "status": "pass",
+          "detail": "present"
+        },
+        "ci": {
+          "status": "fail",
+          "detail": "no CI workflows"
+        },
+        "description": {
+          "status": "pass",
+          "detail": "Satyug OS / AxzoraOS \u2014 voice-first shell, live lattice, cons"
+        },
+        "staleness": {
+          "status": "fresh",
+          "detail": "11d",
+          "days": 10.971425371516204
+        },
+        "local_checkout": {
+          "status": "pass",
+          "detail": "cloned"
+        },
+        "local_sync": {
+          "status": "pass",
+          "detail": "in sync",
+          "head": "1522518b5b15",
+          "fetch_age_days": 13.57060390744213
+        }
+      },
+      "checked_at": "2026-11-07T11:52:27Z",
+      "previously_checked_at": null,
+      "check_age_days": null
+    },
+    {
+      "name": "api-workbench",
+      "full_name": "axzoraharry/api-workbench",
+      "fork": false,
+      "archived": false,
+      "disabled": false,
+      "private": true,
+      "default_branch": "main",
+      "language": "Python",
+      "pushed_at": "2026-10-27T05:51:37Z",
+      "staleness": {
+        "status": "fresh",
+        "days": 11.250687503206018,
+        "label": "11d"
+      },
+      "verdict": "fail",
+      "fails": [
+        "license",
+        "ci"
+      ],
+      "unknowns": [],
+      "warns": [],
+      "checks": {
+        "license": {
+          "status": "fail",
+          "detail": "no licence"
+        },
+        "readme": {
+          "status": "pass",
+          "detail": "present"
+        },
+        "ci": {
+          "status": "fail",
+          "detail": "no CI workflows"
+        },
+        "description": {
+          "status": "pass",
+          "detail": "Browser-driven API workbench: capture every request a web ap"
+        },
+        "staleness": {
+          "status": "fresh",
+          "detail": "11d",
+          "days": 11.250687503206018
+        },
+        "local_checkout": {
+          "status": "skip",
+          "detail": "not cloned"
+        },
+        "local_sync": {
+          "status": "skip",
+          "detail": "not cloned locally",
+          "head": null,
+          "fetch_age_days": null
+        }
+      },
+      "checked_at": "2026-11-07T11:52:27Z",
+      "previously_checked_at": null,
+      "check_age_days": null
+    },
+    {
+      "name": "axzora-super-app",
+      "full_name": "axzoraharry/axzora-super-app",
+      "fork": false,
+      "archived": false,
+      "disabled": false,
+      "private": true,
+      "default_branch": "main",
+      "language": "JavaScript",
+      "pushed_at": "2026-10-26T12:17:47Z",
+      "staleness": {
+        "status": "fresh",
+        "days": 11.982530471840278,
+        "label": "12d"
+      },
+      "verdict": "fail",
+      "fails": [
+        "license",
+        "local_sync"
+      ],
+      "unknowns": [],
+      "warns": [],
+      "checks": {
+        "license": {
+          "status": "fail",
+          "detail": "no licence"
+        },
+        "readme": {
+          "status": "pass",
+          "detail": "present"
+        },
+        "ci": {
+          "status": "pass",
+          "detail": "1 workflow(s)"
+        },
+        "description": {
+          "status": "pass",
+          "detail": "\ud83d\ude80 Axzora Super App - Advanced AI-powered DApp with biometric"
+        },
+        "staleness": {
+          "status": "fresh",
+          "detail": "12d",
+          "days": 11.982530471840278
+        },
+        "local_checkout": {
+          "status": "pass",
+          "detail": "cloned"
+        },
+        "local_sync": {
+          "status": "fail",
+          "detail": "behind by 23",
+          "head": "43526d4c73b1",
+          "fetch_age_days": 13.572316726435185
+        }
+      },
+      "checked_at": "2026-11-07T11:52:27Z",
+      "previously_checked_at": null,
+      "check_age_days": null
+    },
+    {
+      "name": "axzora-pay",
+      "full_name": "axzoraharry/axzora-pay",
+      "fork": false,
+      "archived": false,
+      "disabled": false,
+      "private": true,
+      "default_branch": "main",
+      "language": "JavaScript",
+      "pushed_at": "2026-10-25T00:10:18Z",
+      "staleness": {
+        "status": "fresh",
+        "days": 13.487742430208334,
+        "label": "13d"
+      },
+      "verdict": "fail",
+      "fails": [
+        "license",
+        "ci"
+      ],
+      "unknowns": [],
+      "warns": [],
+      "checks": {
+        "license": {
+          "status": "fail",
+          "detail": "no licence"
+        },
+        "readme": {
+          "status": "pass",
+          "detail": "present"
+        },
+        "ci": {
+          "status": "fail",
+          "detail": "no CI workflows"
+        },
+        "description": {
+          "status": "pass",
+          "detail": "Axzora Pay \u2014 self-hosted UPI + COD gateway: operator tooling"
+        },
+        "staleness": {
+          "status": "fresh",
+          "detail": "13d",
+          "days": 13.487742430208334
+        },
+        "local_checkout": {
+          "status": "pass",
+          "detail": "cloned"
+        },
+        "local_sync": {
+          "status": "pass",
+          "detail": "in sync",
+          "head": "accc4b2646c5",
+          "fetch_age_days": 13.57236752888889
+        }
+      },
+      "checked_at": "2026-11-07T11:52:27Z",
+      "previously_checked_at": null,
+      "check_age_days": null
+    },
+    {
+      "name": "satyug-mr-happy-android",
+      "full_name": "axzoraharry/satyug-mr-happy-android",
+      "fork": false,
+      "archived": false,
+      "disabled": false,
+      "private": true,
+      "default_branch": "main",
+      "language": "HTML",
+      "pushed_at": "2026-10-21T08:44:25Z",
+      "staleness": {
+        "status": "fresh",
+        "days": 17.130739510289352,
+        "label": "17d"
+      },
+      "verdict": "fail",
+      "fails": [
+        "license",
+        "ci"
+      ],
+      "unknowns": [
+        "local_sync"
+      ],
+      "warns": [
+        "description"
+      ],
+      "checks": {
+        "license": {
+          "status": "fail",
+          "detail": "no licence"
+        },
+        "readme": {
+          "status": "pass",
+          "detail": "present"
+        },
+        "ci": {
+          "status": "fail",
+          "detail": "no CI workflows"
+        },
+        "description": {
+          "status": "warn",
+          "detail": "empty"
+        },
+        "staleness": {
+          "status": "fresh",
+          "detail": "17d",
+          "days": 17.130739510289352
+        },
+        "local_checkout": {
+          "status": "pass",
+          "detail": "cloned"
+        },
+        "local_sync": {
+          "status": "unknown",
+          "detail": "no HEAD (HEAD)",
+          "head": null,
+          "fetch_age_days": null
+        }
+      },
+      "checked_at": "2026-11-07T11:52:27Z",
+      "previously_checked_at": null,
+      "check_age_days": null
+    },
+    {
+      "name": "egoexo-live",
+      "full_name": "axzoraharry/egoexo-live",
+      "fork": false,
+      "archived": false,
+      "disabled": false,
+      "private": true,
+      "default_branch": "main",
+      "language": "JavaScript",
+      "pushed_at": "2026-10-20T12:01:16Z",
+      "staleness": {
+        "status": "fresh",
+        "days": 17.994060665555555,
+        "label": "18d"
+      },
+      "verdict": "fail",
+      "fails": [
+        "license",
+        "ci"
+      ],
+      "unknowns": [],
+      "warns": [],
+      "checks": {
+        "license": {
+          "status": "fail",
+          "detail": "no licence"
+        },
+        "readme": {
+          "status": "pass",
+          "detail": "present"
+        },
+        "ci": {
+          "status": "fail",
+          "detail": "no CI workflows"
+        },
+        "description": {
+          "status": "pass",
+          "detail": "Local-first on-device motion capture: MediaPipe pose \u2192 3D av"
+        },
+        "staleness": {
+          "status": "fresh",
+          "detail": "18d",
+          "days": 17.994060665555555
+        },
+        "local_checkout": {
+          "status": "pass",
+          "detail": "cloned"
+        },
+        "local_sync": {
+          "status": "pass",
+          "detail": "in sync",
+          "head": "9d62b451fa6a",
+          "fetch_age_days": 13.572340276562501
+        }
+      },
+      "checked_at": "2026-11-07T11:52:27Z",
+      "previously_checked_at": null,
+      "check_age_days": null
+    },
+    {
+      "name": "axzorasuperapp",
+      "full_name": "axzoraharry/axzorasuperapp",
+      "fork": false,
+      "archived": false,
+      "disabled": false,
+      "private": false,
+      "default_branch": "main",
+      "language": "HTML",
+      "pushed_at": "2026-10-19T15:25:17Z",
+      "staleness": {
+        "status": "fresh",
+        "days": 18.85239627048611,
+        "label": "19d"
+      },
+      "verdict": "fail",
+      "fails": [
+        "license",
+        "local_sync"
+      ],
+      "unknowns": [],
+      "warns": [],
+      "checks": {
+        "license": {
+          "status": "fail",
+          "detail": "no licence"
+        },
+        "readme": {
+          "status": "pass",
+          "detail": "present"
+        },
+        "ci": {
+          "status": "pass",
+          "detail": "2 workflow(s)"
+        },
+        "description": {
+          "status": "pass",
+          "detail": "Axzora \u2014 the AxzoraOS / Happy Paisa ecosystem landing page w"
+        },
+        "staleness": {
+          "status": "fresh",
+          "detail": "19d",
+          "days": 18.85239627048611
+        },
+        "local_checkout": {
+          "status": "pass",
+          "detail": "cloned"
+        },
+        "local_sync": {
+          "status": "fail",
+          "detail": "behind by 2",
+          "head": "5ef3c03d9ff0",
+          "fetch_age_days": 13.572377742465278
+        }
+      },
+      "checked_at": "2026-11-07T11:52:27Z",
+      "previously_checked_at": null,
+      "check_age_days": null
+    },
+    {
+      "name": "axzora-ecosystem",
+      "full_name": "axzoraharry/axzora-ecosystem",
+      "fork": false,
+      "archived": false,
+      "disabled": false,
+      "private": false,
+      "default_branch": "main",
+      "language": "TypeScript",
+      "pushed_at": "2026-10-19T15:15:09Z",
+      "staleness": {
+        "status": "fresh",
+        "days": 18.859446796979167,
+        "label": "19d"
+      },
+      "verdict": "fail",
+      "fails": [
+        "license",
+        "ci",
+        "local_sync"
+      ],
+      "unknowns": [],
+      "warns": [
+        "description"
+      ],
+      "checks": {
+        "license": {
+          "status": "fail",
+          "detail": "no licence"
+        },
+        "readme": {
+          "status": "pass",
+          "detail": "present"
+        },
+        "ci": {
+          "status": "fail",
+          "detail": "no CI workflows"
+        },
+        "description": {
+          "status": "warn",
+          "detail": "empty"
+        },
+        "staleness": {
+          "status": "fresh",
+          "detail": "19d",
+          "days": 18.859446796979167
+        },
+        "local_checkout": {
+          "status": "pass",
+          "detail": "cloned"
+        },
+        "local_sync": {
+          "status": "fail",
+          "detail": "behind by 1",
+          "head": "f86575180e2a",
+          "fetch_age_days": 13.572523542523149
+        }
+      },
+      "checked_at": "2026-11-07T11:52:27Z",
+      "previously_checked_at": null,
+      "check_age_days": null
+    },
+    {
+      "name": "axzora-ludo",
+      "full_name": "axzoraharry/axzora-ludo",
+      "fork": false,
+      "archived": false,
+      "disabled": false,
+      "private": false,
+      "default_branch": "main",
+      "language": "JavaScript",
+      "pushed_at": "2026-10-19T14:48:27Z",
+      "staleness": {
+        "status": "fresh",
+        "days": 18.87801005517361,
+        "label": "19d"
+      },
+      "verdict": "fail",
+      "fails": [
+        "ci",
+        "local_sync"
+      ],
+      "unknowns": [
+        "license"
+      ],
+      "warns": [],
+      "checks": {
+        "license": {
+          "status": "unknown",
+          "detail": "NOASSERTION (unrecognised terms)"
+        },
+        "readme": {
+          "status": "pass",
+          "detail": "present"
+        },
+        "ci": {
+          "status": "fail",
+          "detail": "no CI workflows"
+        },
+        "description": {
+          "status": "pass",
+          "detail": "Axzora online Ludo \u2014 real-time multiplayer room server (MIT)"
+        },
+        "staleness": {
+          "status": "fresh",
+          "detail": "19d",
+          "days": 18.87801005517361
+        },
+        "local_checkout": {
+          "status": "pass",
+          "detail": "cloned"
+        },
+        "local_sync": {
+          "status": "fail",
+          "detail": "behind by 1",
+          "head": "8f44327f5546",
+          "fetch_age_days": 13.572502877534722
+        }
+      },
+      "checked_at": "2026-11-07T11:52:27Z",
+      "previously_checked_at": null,
+      "check_age_days": null
+    },
+    {
+      "name": "axzora-ota",
+      "full_name": "axzoraharry/axzora-ota",
+      "fork": false,
+      "archived": false,
+      "disabled": false,
+      "private": false,
+      "default_branch": "main",
+      "language": null,
+      "pushed_at": "2026-11-07T08:28:50Z",
+      "staleness": {
+        "status": "fresh",
+        "days": 0.1416461679861111,
+        "label": "0d"
+      },
+      "verdict": "fail",
+      "fails": [
+        "license",
+        "ci",
+        "local_sync"
+      ],
+      "unknowns": [],
+      "warns": [],
+      "checks": {
+        "license": {
+          "status": "fail",
+          "detail": "no licence"
+        },
+        "readme": {
+          "status": "pass",
+          "detail": "present"
+        },
+        "ci": {
+          "status": "fail",
+          "detail": "no CI workflows"
+        },
+        "description": {
+          "status": "pass",
+          "detail": "AxzoraOS OTA release assets (APKs served to installed phones"
+        },
+        "staleness": {
+          "status": "fresh",
+          "detail": "0d",
+          "days": 0.1416461679861111
+        },
+        "local_checkout": {
+          "status": "pass",
+          "detail": "cloned"
+        },
+        "local_sync": {
+          "status": "fail",
+          "detail": "behind by 1",
+          "head": "67e8d7441df1",
+          "fetch_age_days": 13.572488566712963
+        }
+      },
+      "checked_at": "2026-11-07T11:52:27Z",
+      "previously_checked_at": null,
+      "check_age_days": null
+    },
+    {
+      "name": "mr-happy-android",
+      "full_name": "axzoraharry/mr-happy-android",
+      "fork": false,
+      "archived": false,
+      "disabled": false,
+      "private": false,
+      "default_branch": "main",
+      "language": "Kotlin",
+      "pushed_at": "2026-08-13T16:04:05Z",
+      "staleness": {
+        "status": "aging",
+        "days": 85.82551136988427,
+        "label": "86d"
+      },
+      "verdict": "fail",
+      "fails": [
+        "license",
+        "readme"
+      ],
+      "unknowns": [],
+      "warns": [],
+      "checks": {
+        "license": {
+          "status": "fail",
+          "detail": "no licence"
+        },
+        "readme": {
+          "status": "fail",
+          "detail": "no README"
+        },
+        "ci": {
+          "status": "pass",
+          "detail": "1 workflow(s)"
+        },
+        "description": {
+          "status": "pass",
+          "detail": "Mr Happy Android APK - AI Assistant App"
+        },
+        "staleness": {
+          "status": "aging",
+          "detail": "86d",
+          "days": 85.82551136988427
+        },
+        "local_checkout": {
+          "status": "pass",
+          "detail": "cloned"
+        },
+        "local_sync": {
+          "status": "pass",
+          "detail": "in sync",
+          "head": "45f12736dddb",
+          "fetch_age_days": 13.571023455833334
+        }
+      },
+      "checked_at": "2026-11-07T11:52:27Z",
+      "previously_checked_at": null,
+      "check_age_days": null
+    },
+    {
+      "name": "docs",
+      "full_name": "axzoraharry/docs",
+      "fork": false,
+      "archived": false,
+      "disabled": false,
+      "private": false,
+      "default_branch": "main",
+      "language": "MDX",
+      "pushed_at": "2026-08-01T14:20:24Z",
+      "staleness": {
+        "status": "stale",
+        "days": 97.89752804252315,
+        "label": "98d"
+      },
+      "verdict": "fail",
+      "fails": [
+        "ci"
+      ],
+      "unknowns": [],
+      "warns": [
+        "description",
+        "staleness"
+      ],
+      "checks": {
+        "license": {
+          "status": "pass",
+          "detail": "MIT"
+        },
+        "readme": {
+          "status": "pass",
+          "detail": "present"
+        },
+        "ci": {
+          "status": "fail",
+          "detail": "no CI workflows"
+        },
+        "description": {
+          "status": "warn",
+          "detail": "empty"
+        },
+        "staleness": {
+          "status": "stale",
+          "detail": "98d",
+          "days": 97.89752804252315
+        },
+        "local_checkout": {
+          "status": "pass",
+          "detail": "cloned"
+        },
+        "local_sync": {
+          "status": "pass",
+          "detail": "in sync",
+          "head": "a697d5ea2c9a",
+          "fetch_age_days": 13.572439212418981
+        }
+      },
+      "checked_at": "2026-11-07T11:52:27Z",
+      "previously_checked_at": null,
+      "check_age_days": null
+    },
+    {
+      "name": "network-simulate-412",
+      "full_name": "axzoraharry/network-simulate-412",
+      "fork": false,
+      "archived": false,
+      "disabled": false,
+      "private": true,
+      "default_branch": "main",
+      "language": "TypeScript",
+      "pushed_at": "2026-07-26T10:21:59Z",
+      "staleness": {
+        "status": "stale",
+        "days": 104.06311046241899,
+        "label": "104d"
+      },
+      "verdict": "fail",
+      "fails": [
+        "license",
+        "ci"
+      ],
+      "unknowns": [],
+      "warns": [
+        "description",
+        "staleness"
+      ],
+      "checks": {
+        "license": {
+          "status": "fail",
+          "detail": "no licence"
+        },
+        "readme": {
+          "status": "pass",
+          "detail": "present"
+        },
+        "ci": {
+          "status": "fail",
+          "detail": "no CI workflows"
+        },
+        "description": {
+          "status": "warn",
+          "detail": "empty"
+        },
+        "staleness": {
+          "status": "stale",
+          "detail": "104d",
+          "days": 104.06311046241899
+        },
+        "local_checkout": {
+          "status": "pass",
+          "detail": "cloned"
+        },
+        "local_sync": {
+          "status": "pass",
+          "detail": "in sync",
+          "head": "c7165be63b18",
+          "fetch_age_days": 13.570943230405092
+        }
+      },
+      "checked_at": "2026-11-07T11:52:27Z",
+      "previously_checked_at": null,
+      "check_age_days": null
+    },
+    {
+      "name": "mr-happy",
+      "full_name": "axzoraharry/mr-happy",
+      "fork": false,
+      "archived": false,
+      "disabled": false,
+      "private": true,
+      "default_branch": "master",
+      "language": "Python",
+      "pushed_at": "2026-06-23T06:18:08Z",
+      "staleness": {
+        "status": "stale",
+        "days": 137.2324637840162,
+        "label": "137d"
+      },
+      "verdict": "fail",
+      "fails": [
+        "license",
+        "readme",
+        "ci"
+      ],
+      "unknowns": [],
+      "warns": [
+        "staleness"
+      ],
+      "checks": {
+        "license": {
+          "status": "fail",
+          "detail": "no licence"
+        },
+        "readme": {
+          "status": "fail",
+          "detail": "no README"
+        },
+        "ci": {
+          "status": "fail",
+          "detail": "no CI workflows"
+        },
+        "description": {
+          "status": "pass",
+          "detail": "Mr. Happy voice assistant \u2014 PM2 swarm, voice pipeline, memor"
+        },
+        "staleness": {
+          "status": "stale",
+          "detail": "137d",
+          "days": 137.2324637840162
+        },
+        "local_checkout": {
+          "status": "pass",
+          "detail": "cloned"
+        },
+        "local_sync": {
+          "status": "pass",
+          "detail": "in sync",
+          "head": "948764ff0e43",
+          "fetch_age_days": 13.571076445636574
+        }
+      },
+      "checked_at": "2026-11-07T11:52:27Z",
+      "previously_checked_at": null,
+      "check_age_days": null
+    },
+    {
+      "name": "my-app",
+      "full_name": "axzoraharry/my-app",
+      "fork": false,
+      "archived": false,
+      "disabled": false,
+      "private": true,
+      "default_branch": "master",
+      "language": "TypeScript",
+      "pushed_at": "2026-06-22T19:36:39Z",
+      "staleness": {
+        "status": "stale",
+        "days": 137.67795957229168,
+        "label": "138d"
+      },
+      "verdict": "fail",
+      "fails": [
+        "license",
+        "ci"
+      ],
+      "unknowns": [],
+      "warns": [
+        "staleness"
+      ],
+      "checks": {
+        "license": {
+          "status": "fail",
+          "detail": "no licence"
+        },
+        "readme": {
+          "status": "pass",
+          "detail": "present"
+        },
+        "ci": {
+          "status": "fail",
+          "detail": "no CI workflows"
+        },
+        "description": {
+          "status": "pass",
+          "detail": "Mr. Happy Voice Swarm control panel"
+        },
+        "staleness": {
+          "status": "stale",
+          "detail": "138d",
+          "days": 137.67795957229168
+        },
+        "local_checkout": {
+          "status": "pass",
+          "detail": "cloned"
+        },
+        "local_sync": {
+          "status": "pass",
+          "detail": "in sync",
+          "head": "f18eb549242b",
+          "fetch_age_days": 13.571076213101852
+        }
+      },
+      "checked_at": "2026-11-07T11:52:27Z",
+      "previously_checked_at": null,
+      "check_age_days": null
+    },
+    {
+      "name": "luna",
+      "full_name": "axzoraharry/luna",
+      "fork": false,
+      "archived": false,
+      "disabled": false,
+      "private": false,
+      "default_branch": "main",
+      "language": null,
+      "pushed_at": "2025-11-01T14:18:09Z",
+      "staleness": {
+        "status": "abandoned",
+        "days": 370.8991544274305,
+        "label": "371d"
+      },
+      "verdict": "abandoned",
+      "fails": [
+        "ci",
+        "staleness"
+      ],
+      "unknowns": [],
+      "warns": [],
+      "checks": {
+        "license": {
+          "status": "pass",
+          "detail": "GPL-3.0"
+        },
+        "readme": {
+          "status": "pass",
+          "detail": "present"
+        },
+        "ci": {
+          "status": "fail",
+          "detail": "no CI workflows"
+        },
+        "description": {
+          "status": "pass",
+          "detail": "RomanAILabs Luna: 1st local 4D AI soul (0.5B GGUF). Thinks, "
+        },
+        "staleness": {
+          "status": "abandoned",
+          "detail": "371d",
+          "days": 370.8991544274305
+        },
+        "local_checkout": {
+          "status": "pass",
+          "detail": "cloned"
+        },
+        "local_sync": {
+          "status": "pass",
+          "detail": "in sync",
+          "head": "16099af31e68",
+          "fetch_age_days": 13.571346850856482
+        }
+      },
+      "checked_at": "2026-11-07T11:52:27Z",
+      "previously_checked_at": null,
+      "check_age_days": null
+    },
+    {
+      "name": "vite-react",
+      "full_name": "axzoraharry/vite-react",
+      "fork": false,
+      "archived": false,
+      "disabled": false,
+      "private": true,
+      "default_branch": "main",
+      "language": "CSS",
+      "pushed_at": "2026-03-12T07:29:51Z",
+      "staleness": {
+        "status": "stale",
+        "days": 240.1827114986227,
+        "label": "240d"
+      },
+      "verdict": "fail",
+      "fails": [
+        "license",
+        "ci"
+      ],
+      "unknowns": [],
+      "warns": [
+        "description",
+        "staleness"
+      ],
+      "checks": {
+        "license": {
+          "status": "fail",
+          "detail": "no licence"
+        },
+        "readme": {
+          "status": "pass",
+          "detail": "present"
+        },
+        "ci": {
+          "status": "fail",
+          "detail": "no CI workflows"
+        },
+        "description": {
+          "status": "warn",
+          "detail": "empty"
+        },
+        "staleness": {
+          "status": "stale",
+          "detail": "240d",
+          "days": 240.1827114986227
+        },
+        "local_checkout": {
+          "status": "pass",
+          "detail": "cloned"
+        },
+        "local_sync": {
+          "status": "pass",
+          "detail": "in sync",
+          "head": "16b68b4f91ee",
+          "fetch_age_days": null
+        }
+      },
+      "checked_at": "2026-11-07T11:52:27Z",
+      "previously_checked_at": null,
+      "check_age_days": null
+    },
+    {
+      "name": "AppLaunchKit-pro-main",
+      "full_name": "axzoraharry/AppLaunchKit-pro-main",
+      "fork": false,
+      "archived": false,
+      "disabled": false,
+      "private": true,
+      "default_branch": "main",
+      "language": null,
+      "pushed_at": "2026-02-11T22:26:25Z",
+      "staleness": {
+        "status": "stale",
+        "days": 268.5601100411227,
+        "label": "269d"
+      },
+      "verdict": "fail",
+      "fails": [
+        "license",
+        "ci"
+      ],
+      "unknowns": [],
+      "warns": [
+        "description",
+        "staleness"
+      ],
+      "checks": {
+        "license": {
+          "status": "fail",
+          "detail": "no licence"
+        },
+        "readme": {
+          "status": "pass",
+          "detail": "present"
+        },
+        "ci": {
+          "status": "fail",
+          "detail": "no CI workflows"
+        },
+        "description": {
+          "status": "warn",
+          "detail": "empty"
+        },
+        "staleness": {
+          "status": "stale",
+          "detail": "269d",
+          "days": 268.5601100411227
+        },
+        "local_checkout": {
+          "status": "pass",
+          "detail": "cloned"
+        },
+        "local_sync": {
+          "status": "pass",
+          "detail": "in sync",
+          "head": "4d4601ed9c08",
+          "fetch_age_days": 13.572854453032406
+        }
+      },
+      "checked_at": "2026-11-07T11:52:27Z",
+      "previously_checked_at": null,
+      "check_age_days": null
+    },
+    {
+      "name": "Pumpfun-Volume-Bot",
+      "full_name": "axzoraharry/Pumpfun-Volume-Bot",
+      "fork": false,
+      "archived": false,
+      "disabled": false,
+      "private": true,
+      "default_branch": "main",
+      "language": "TypeScript",
+      "pushed_at": "2026-02-10T15:42:29Z",
+      "staleness": {
+        "status": "stale",
+        "days": 269.8406313145718,
+        "label": "270d"
+      },
+      "verdict": "fail",
+      "fails": [
+        "license",
+        "ci"
+      ],
+      "unknowns": [],
+      "warns": [
+        "description",
+        "staleness"
+      ],
+      "checks": {
+        "license": {
+          "status": "fail",
+          "detail": "no licence"
+        },
+        "readme": {
+          "status": "pass",
+          "detail": "present"
+        },
+        "ci": {
+          "status": "fail",
+          "detail": "no CI workflows"
+        },
+        "description": {
+          "status": "warn",
+          "detail": "empty"
+        },
+        "staleness": {
+          "status": "stale",
+          "detail": "270d",
+          "days": 269.8406313145718
+        },
+        "local_checkout": {
+          "status": "pass",
+          "detail": "cloned"
+        },
+        "local_sync": {
+          "status": "pass",
+          "detail": "in sync",
+          "head": "73ee8ee2ec69",
+          "fetch_age_days": null
+        }
+      },
+      "checked_at": "2026-11-07T11:52:27Z",
+      "previously_checked_at": null,
+      "check_age_days": null
+    },
+    {
+      "name": "a-678375",
+      "full_name": "axzoraharry/a-678375",
+      "fork": false,
+      "archived": false,
+      "disabled": false,
+      "private": true,
+      "default_branch": "main",
+      "language": "TypeScript",
+      "pushed_at": "2025-11-09T22:12:04Z",
+      "staleness": {
+        "status": "stale",
+        "days": 362.57010059645836,
+        "label": "363d"
+      },
+      "verdict": "fail",
+      "fails": [
+        "license",
+        "ci"
+      ],
+      "unknowns": [],
+      "warns": [
+        "description",
+        "staleness"
+      ],
+      "checks": {
+        "license": {
+          "status": "fail",
+          "detail": "no licence"
+        },
+        "readme": {
+          "status": "pass",
+          "detail": "present"
+        },
+        "ci": {
+          "status": "fail",
+          "detail": "no CI workflows"
+        },
+        "description": {
+          "status": "warn",
+          "detail": "empty"
+        },
+        "staleness": {
+          "status": "stale",
+          "detail": "363d",
+          "days": 362.57010059645836
+        },
+        "local_checkout": {
+          "status": "pass",
+          "detail": "cloned"
+        },
+        "local_sync": {
+          "status": "pass",
+          "detail": "in sync",
+          "head": "4470e57a2cbd",
+          "fetch_age_days": 13.57274718417824
+        }
+      },
+      "checked_at": "2026-11-07T11:52:27Z",
+      "previously_checked_at": null,
+      "check_age_days": null
+    },
+    {
+      "name": "axzora-happy-s-Org",
+      "full_name": "axzoraharry/axzora-happy-s-Org",
+      "fork": false,
+      "archived": false,
+      "disabled": false,
+      "private": true,
+      "default_branch": "main",
+      "language": "TypeScript",
+      "pushed_at": "2025-11-06T23:19:54Z",
+      "staleness": {
+        "status": "abandoned",
+        "days": 365.5230109953703,
+        "label": "366d"
+      },
+      "verdict": "abandoned",
+      "fails": [
+        "license",
+        "ci",
+        "staleness"
+      ],
+      "unknowns": [],
+      "warns": [],
+      "checks": {
+        "license": {
+          "status": "fail",
+          "detail": "no licence"
+        },
+        "readme": {
+          "status": "pass",
+          "detail": "present"
+        },
+        "ci": {
+          "status": "fail",
+          "detail": "no CI workflows"
+        },
+        "description": {
+          "status": "pass",
+          "detail": "Harry@axzora"
+        },
+        "staleness": {
+          "status": "abandoned",
+          "detail": "366d",
+          "days": 365.5230109953703
+        },
+        "local_checkout": {
+          "status": "pass",
+          "detail": "cloned"
+        },
+        "local_sync": {
+          "status": "pass",
+          "detail": "in sync",
+          "head": "2c11d166978f",
+          "fetch_age_days": 13.572688517835648
+        }
+      },
+      "checked_at": "2026-11-07T11:52:27Z",
+      "previously_checked_at": null,
+      "check_age_days": null
+    },
+    {
+      "name": "Axzora-",
+      "full_name": "axzoraharry/Axzora-",
+      "fork": false,
+      "archived": false,
+      "disabled": false,
+      "private": true,
+      "default_branch": "main",
+      "language": "TypeScript",
+      "pushed_at": "2025-11-06T20:20:11Z",
+      "staleness": {
+        "status": "abandoned",
+        "days": 365.64782720086805,
+        "label": "366d"
+      },
+      "verdict": "abandoned",
+      "fails": [
+        "license",
+        "ci",
+        "staleness"
+      ],
+      "unknowns": [],
+      "warns": [],
+      "checks": {
+        "license": {
+          "status": "fail",
+          "detail": "no licence"
+        },
+        "readme": {
+          "status": "pass",
+          "detail": "present"
+        },
+        "ci": {
+          "status": "fail",
+          "detail": "no CI workflows"
+        },
+        "description": {
+          "status": "pass",
+          "detail": "What"
+        },
+        "staleness": {
+          "status": "abandoned",
+          "detail": "366d",
+          "days": 365.64782720086805
+        },
+        "local_checkout": {
+          "status": "pass",
+          "detail": "cloned"
+        },
+        "local_sync": {
+          "status": "pass",
+          "detail": "in sync",
+          "head": "88360f408901",
+          "fetch_age_days": 13.572899622141202
+        }
+      },
+      "checked_at": "2026-11-07T11:52:27Z",
+      "previously_checked_at": null,
+      "check_age_days": null
+    },
+    {
+      "name": "Mr.Happy",
+      "full_name": "axzoraharry/Mr.Happy",
+      "fork": false,
+      "archived": false,
+      "disabled": false,
+      "private": true,
+      "default_branch": "main",
+      "language": "TypeScript",
+      "pushed_at": "2025-09-29T02:56:26Z",
+      "staleness": {
+        "status": "abandoned",
+        "days": 404.3726672725348,
+        "label": "404d"
+      },
+      "verdict": "abandoned",
+      "fails": [
+        "ci",
+        "staleness"
+      ],
+      "unknowns": [],
+      "warns": [],
+      "checks": {
+        "license": {
+          "status": "pass",
+          "detail": "Apache-2.0"
+        },
+        "readme": {
+          "status": "pass",
+          "detail": "present"
+        },
+        "ci": {
+          "status": "fail",
+          "detail": "no CI workflows"
+        },
+        "description": {
+          "status": "pass",
+          "detail": "Harry@axzora"
+        },
+        "staleness": {
+          "status": "abandoned",
+          "detail": "404d",
+          "days": 404.3726672725348
+        },
+        "local_checkout": {
+          "status": "pass",
+          "detail": "cloned"
+        },
+        "local_sync": {
+          "status": "pass",
+          "detail": "in sync",
+          "head": "8fa277ad3110",
+          "fetch_age_days": null
+        }
+      },
+      "checked_at": "2026-11-07T11:52:27Z",
+      "previously_checked_at": null,
+      "check_age_days": null
+    },
+    {
+      "name": "n-7446",
+      "full_name": "axzoraharry/n-7446",
+      "fork": false,
+      "archived": false,
+      "disabled": false,
+      "private": true,
+      "default_branch": "main",
+      "language": "TypeScript",
+      "pushed_at": "2025-09-20T19:33:16Z",
+      "staleness": {
+        "status": "abandoned",
+        "days": 412.68043840967596,
+        "label": "413d"
+      },
+      "verdict": "abandoned",
+      "fails": [
+        "license",
+        "ci",
+        "staleness"
+      ],
+      "unknowns": [],
+      "warns": [
+        "description"
+      ],
+      "checks": {
+        "license": {
+          "status": "fail",
+          "detail": "no licence"
+        },
+        "readme": {
+          "status": "pass",
+          "detail": "present"
+        },
+        "ci": {
+          "status": "fail",
+          "detail": "no CI workflows"
+        },
+        "description": {
+          "status": "warn",
+          "detail": "empty"
+        },
+        "staleness": {
+          "status": "abandoned",
+          "detail": "413d",
+          "days": 412.68043840967596
+        },
+        "local_checkout": {
+          "status": "pass",
+          "detail": "cloned"
+        },
+        "local_sync": {
+          "status": "pass",
+          "detail": "in sync",
+          "head": "42ebb0da521d",
+          "fetch_age_days": null
+        }
+      },
+      "checked_at": "2026-11-07T11:52:27Z",
+      "previously_checked_at": null,
+      "check_age_days": null
+    },
+    {
+      "name": "HAPPY",
+      "full_name": "axzoraharry/HAPPY",
+      "fork": false,
+      "archived": false,
+      "disabled": false,
+      "private": true,
+      "default_branch": "main",
+      "language": "TypeScript",
+      "pushed_at": "2025-09-20T18:51:57Z",
+      "staleness": {
+        "status": "abandoned",
+        "days": 412.7091433002662,
+        "label": "413d"
+      },
+      "verdict": "abandoned",
+      "fails": [
+        "license",
+        "ci",
+        "staleness"
+      ],
+      "unknowns": [],
+      "warns": [],
+      "checks": {
+        "license": {
+          "status": "fail",
+          "detail": "no licence"
+        },
+        "readme": {
+          "status": "pass",
+          "detail": "present"
+        },
+        "ci": {
+          "status": "fail",
+          "detail": "no CI workflows"
+        },
+        "description": {
+          "status": "pass",
+          "detail": "COMMING SOON"
+        },
+        "staleness": {
+          "status": "abandoned",
+          "detail": "413d",
+          "days": 412.7091433002662
+        },
+        "local_checkout": {
+          "status": "pass",
+          "detail": "cloned"
+        },
+        "local_sync": {
+          "status": "pass",
+          "detail": "in sync",
+          "head": "3e0555ec582d",
+          "fetch_age_days": 13.572933017986111
+        }
+      },
+      "checked_at": "2026-11-07T11:52:27Z",
+      "previously_checked_at": null,
+      "check_age_days": null
+    },
+    {
+      "name": "happy-superPP",
+      "full_name": "axzoraharry/happy-superPP",
+      "fork": false,
+      "archived": false,
+      "disabled": false,
+      "private": true,
+      "default_branch": "main",
+      "language": "TypeScript",
+      "pushed_at": "2025-09-04T21:26:13Z",
+      "staleness": {
+        "status": "abandoned",
+        "days": 428.60202935870376,
+        "label": "429d"
+      },
+      "verdict": "abandoned",
+      "fails": [
+        "license",
+        "ci",
+        "staleness"
+      ],
+      "unknowns": [],
+      "warns": [
+        "description"
+      ],
+      "checks": {
+        "license": {
+          "status": "fail",
+          "detail": "no licence"
+        },
+        "readme": {
+          "status": "pass",
+          "detail": "present"
+        },
+        "ci": {
+          "status": "fail",
+          "detail": "no CI workflows"
+        },
+        "description": {
+          "status": "warn",
+          "detail": "empty"
+        },
+        "staleness": {
+          "status": "abandoned",
+          "detail": "429d",
+          "days": 428.60202935870376
+        },
+        "local_checkout": {
+          "status": "pass",
+          "detail": "cloned"
+        },
+        "local_sync": {
+          "status": "pass",
+          "detail": "in sync",
+          "head": "0656078a51cf",
+          "fetch_age_days": null
+        }
+      },
+      "checked_at": "2026-11-07T11:52:27Z",
+      "previously_checked_at": null,
+      "check_age_days": null
+    },
+    {
+      "name": "Happyos",
+      "full_name": "axzoraharry/Happyos",
+      "fork": false,
+      "archived": false,
+      "disabled": false,
+      "private": true,
+      "default_branch": "main",
+      "language": "TypeScript",
+      "pushed_at": "2025-08-31T11:53:56Z",
+      "staleness": {
+        "status": "abandoned",
+        "days": 432.9994626845833,
+        "label": "433d"
+      },
+      "verdict": "abandoned",
+      "fails": [
+        "license",
+        "ci",
+        "staleness"
+      ],
+      "unknowns": [],
+      "warns": [],
+      "checks": {
+        "license": {
+          "status": "fail",
+          "detail": "no licence"
+        },
+        "readme": {
+          "status": "pass",
+          "detail": "present"
+        },
+        "ci": {
+          "status": "fail",
+          "detail": "no CI workflows"
+        },
+        "description": {
+          "status": "pass",
+          "detail": "docker init Welcome to the Docker Init CLI!  This utility wi"
+        },
+        "staleness": {
+          "status": "abandoned",
+          "detail": "433d",
+          "days": 432.9994626845833
+        },
+        "local_checkout": {
+          "status": "pass",
+          "detail": "cloned"
+        },
+        "local_sync": {
+          "status": "pass",
+          "detail": "in sync",
+          "head": "12ef67306352",
+          "fetch_age_days": null
+        }
+      },
+      "checked_at": "2026-11-07T11:52:27Z",
+      "previously_checked_at": null,
+      "check_age_days": null
+    },
+    {
+      "name": "happy-coin-universe",
+      "full_name": "axzoraharry/happy-coin-universe",
+      "fork": false,
+      "archived": false,
+      "disabled": false,
+      "private": false,
+      "default_branch": "main",
+      "language": "TypeScript",
+      "pushed_at": "2025-08-17T21:29:36Z",
+      "staleness": {
+        "status": "abandoned",
+        "days": 446.5997083657523,
+        "label": "447d"
+      },
+      "verdict": "abandoned",
+      "fails": [
+        "license",
+        "ci",
+        "staleness"
+      ],
+      "unknowns": [],
+      "warns": [
+        "description"
+      ],
+      "checks": {
+        "license": {
+          "status": "fail",
+          "detail": "no licence"
+        },
+        "readme": {
+          "status": "pass",
+          "detail": "present"
+        },
+        "ci": {
+          "status": "fail",
+          "detail": "no CI workflows"
+        },
+        "description": {
+          "status": "warn",
+          "detail": "empty"
+        },
+        "staleness": {
+          "status": "abandoned",
+          "detail": "447d",
+          "days": 446.5997083657523
+        },
+        "local_checkout": {
+          "status": "pass",
+          "detail": "cloned"
+        },
+        "local_sync": {
+          "status": "pass",
+          "detail": "in sync",
+          "head": "2f7f392e4d83",
+          "fetch_age_days": 13.572644255370369
+        }
+      },
+      "checked_at": "2026-11-07T11:52:27Z",
+      "previously_checked_at": null,
+      "check_age_days": null
+    },
+    {
+      "name": "happy-paisa-spark",
+      "full_name": "axzoraharry/happy-paisa-spark",
+      "fork": false,
+      "archived": false,
+      "disabled": false,
+      "private": true,
+      "default_branch": "main",
+      "language": "TypeScript",
+      "pushed_at": "2025-08-17T20:52:56Z",
+      "staleness": {
+        "status": "abandoned",
+        "days": 446.62518540864585,
+        "label": "447d"
+      },
+      "verdict": "abandoned",
+      "fails": [
+        "license",
+        "ci",
+        "staleness"
+      ],
+      "unknowns": [],
+      "warns": [
+        "description"
+      ],
+      "checks": {
+        "license": {
+          "status": "fail",
+          "detail": "no licence"
+        },
+        "readme": {
+          "status": "pass",
+          "detail": "present"
+        },
+        "ci": {
+          "status": "fail",
+          "detail": "no CI workflows"
+        },
+        "description": {
+          "status": "warn",
+          "detail": "empty"
+        },
+        "staleness": {
+          "status": "abandoned",
+          "detail": "447d",
+          "days": 446.62518540864585
+        },
+        "local_checkout": {
+          "status": "pass",
+          "detail": "cloned"
+        },
+        "local_sync": {
+          "status": "pass",
+          "detail": "in sync",
+          "head": "9820a1d568ed",
+          "fetch_age_days": null
+        }
+      },
+      "checked_at": "2026-11-07T11:52:27Z",
+      "previously_checked_at": null,
+      "check_age_days": null
+    },
+    {
+      "name": "project-2025-08-04",
+      "full_name": "axzoraharry/project-2025-08-04",
+      "fork": false,
+      "archived": false,
+      "disabled": false,
+      "private": false,
+      "default_branch": "main",
+      "language": "TypeScript",
+      "pushed_at": "2025-08-04T15:20:41Z",
+      "staleness": {
+        "status": "abandoned",
+        "days": 459.85592622913197,
+        "label": "460d"
+      },
+      "verdict": "abandoned",
+      "fails": [
+        "license",
+        "readme",
+        "ci",
+        "staleness"
+      ],
+      "unknowns": [],
+      "warns": [
+        "description"
+      ],
+      "checks": {
+        "license": {
+          "status": "fail",
+          "detail": "no licence"
+        },
+        "readme": {
+          "status": "fail",
+          "detail": "no README"
+        },
+        "ci": {
+          "status": "fail",
+          "detail": "no CI workflows"
+        },
+        "description": {
+          "status": "warn",
+          "detail": "empty"
+        },
+        "staleness": {
+          "status": "abandoned",
+          "detail": "460d",
+          "days": 459.85592622913197
+        },
+        "local_checkout": {
+          "status": "pass",
+          "detail": "cloned"
+        },
+        "local_sync": {
+          "status": "pass",
+          "detail": "in sync",
+          "head": "6dab794e765e",
+          "fetch_age_days": null
+        }
+      },
+      "checked_at": "2026-11-07T11:52:27Z",
+      "previously_checked_at": null,
+      "check_age_days": null
+    },
+    {
+      "name": "happy-paisa-web-home",
+      "full_name": "axzoraharry/happy-paisa-web-home",
+      "fork": false,
+      "archived": false,
+      "disabled": false,
+      "private": true,
+      "default_branch": "main",
+      "language": "TypeScript",
+      "pushed_at": "2025-07-24T08:39:27Z",
+      "staleness": {
+        "status": "abandoned",
+        "days": 471.1345749083333,
+        "label": "471d"
+      },
+      "verdict": "abandoned",
+      "fails": [
+        "license",
+        "ci",
+        "staleness"
+      ],
+      "unknowns": [],
+      "warns": [
+        "description"
+      ],
+      "checks": {
+        "license": {
+          "status": "fail",
+          "detail": "no licence"
+        },
+        "readme": {
+          "status": "pass",
+          "detail": "present"
+        },
+        "ci": {
+          "status": "fail",
+          "detail": "no CI workflows"
+        },
+        "description": {
+          "status": "warn",
+          "detail": "empty"
+        },
+        "staleness": {
+          "status": "abandoned",
+          "detail": "471d",
+          "days": 471.1345749083333
+        },
+        "local_checkout": {
+          "status": "pass",
+          "detail": "cloned"
+        },
+        "local_sync": {
+          "status": "pass",
+          "detail": "in sync",
+          "head": "626da586874b",
+          "fetch_age_days": null
+        }
+      },
+      "checked_at": "2026-11-07T11:52:27Z",
+      "previously_checked_at": null,
+      "check_age_days": null
+    },
+    {
+      "name": "tourism",
+      "full_name": "axzoraharry/tourism",
+      "fork": false,
+      "archived": false,
+      "disabled": false,
+      "private": false,
+      "default_branch": "main",
+      "language": "TypeScript",
+      "pushed_at": "2025-07-24T05:59:53Z",
+      "staleness": {
+        "status": "abandoned",
+        "days": 471.245398111713,
+        "label": "471d"
+      },
+      "verdict": "abandoned",
+      "fails": [
+        "license",
+        "ci",
+        "staleness"
+      ],
+      "unknowns": [],
+      "warns": [
+        "description"
+      ],
+      "checks": {
+        "license": {
+          "status": "fail",
+          "detail": "no licence"
+        },
+        "readme": {
+          "status": "pass",
+          "detail": "present"
+        },
+        "ci": {
+          "status": "fail",
+          "detail": "no CI workflows"
+        },
+        "description": {
+          "status": "warn",
+          "detail": "empty"
+        },
+        "staleness": {
+          "status": "abandoned",
+          "detail": "471d",
+          "days": 471.245398111713
+        },
+        "local_checkout": {
+          "status": "pass",
+          "detail": "cloned"
+        },
+        "local_sync": {
+          "status": "pass",
+          "detail": "in sync",
+          "head": "4372b01a9d53",
+          "fetch_age_days": null
+        }
+      },
+      "checked_at": "2026-11-07T11:52:27Z",
+      "previously_checked_at": null,
+      "check_age_days": null
+    },
+    {
+      "name": "axzora-happy-cart",
+      "full_name": "axzoraharry/axzora-happy-cart",
+      "fork": false,
+      "archived": false,
+      "disabled": false,
+      "private": true,
+      "default_branch": "main",
+      "language": "TypeScript",
+      "pushed_at": "2025-07-23T16:04:42Z",
+      "staleness": {
+        "status": "abandoned",
+        "days": 471.82540011959486,
+        "label": "472d"
+      },
+      "verdict": "abandoned",
+      "fails": [
+        "license",
+        "ci",
+        "staleness"
+      ],
+      "unknowns": [],
+      "warns": [
+        "description"
+      ],
+      "checks": {
+        "license": {
+          "status": "fail",
+          "detail": "no licence"
+        },
+        "readme": {
+          "status": "pass",
+          "detail": "present"
+        },
+        "ci": {
+          "status": "fail",
+          "detail": "no CI workflows"
+        },
+        "description": {
+          "status": "warn",
+          "detail": "empty"
+        },
+        "staleness": {
+          "status": "abandoned",
+          "detail": "472d",
+          "days": 471.82540011959486
+        },
+        "local_checkout": {
+          "status": "pass",
+          "detail": "cloned"
+        },
+        "local_sync": {
+          "status": "pass",
+          "detail": "in sync",
+          "head": "722c6ea2a520",
+          "fetch_age_days": 13.57287437513889
+        }
+      },
+      "checked_at": "2026-11-07T11:52:27Z",
+      "previously_checked_at": null,
+      "check_age_days": null
+    },
+    {
+      "name": "traffic-eye-reporter-system",
+      "full_name": "axzoraharry/traffic-eye-reporter-system",
+      "fork": false,
+      "archived": false,
+      "disabled": false,
+      "private": true,
+      "default_branch": "main",
+      "language": "TypeScript",
+      "pushed_at": "2025-07-11T07:58:40Z",
+      "staleness": {
+        "status": "abandoned",
+        "days": 484.16293480899304,
+        "label": "484d"
+      },
+      "verdict": "abandoned",
+      "fails": [
+        "license",
+        "ci",
+        "staleness"
+      ],
+      "unknowns": [],
+      "warns": [
+        "description"
+      ],
+      "checks": {
+        "license": {
+          "status": "fail",
+          "detail": "no licence"
+        },
+        "readme": {
+          "status": "pass",
+          "detail": "present"
+        },
+        "ci": {
+          "status": "fail",
+          "detail": "no CI workflows"
+        },
+        "description": {
+          "status": "warn",
+          "detail": "empty"
+        },
+        "staleness": {
+          "status": "abandoned",
+          "detail": "484d",
+          "days": 484.16293480899304
+        },
+        "local_checkout": {
+          "status": "pass",
+          "detail": "cloned"
+        },
+        "local_sync": {
+          "status": "pass",
+          "detail": "in sync",
+          "head": "a19c7964d783",
+          "fetch_age_days": null
+        }
+      },
+      "checked_at": "2026-11-07T11:52:27Z",
+      "previously_checked_at": null,
+      "check_age_days": null
+    },
+    {
+      "name": "hcricket",
+      "full_name": "axzoraharry/hcricket",
+      "fork": false,
+      "archived": false,
+      "disabled": false,
+      "private": false,
+      "default_branch": "main",
+      "language": "TypeScript",
+      "pushed_at": "2025-07-10T05:57:43Z",
+      "staleness": {
+        "status": "abandoned",
+        "days": 485.24694089836805,
+        "label": "485d"
+      },
+      "verdict": "abandoned",
+      "fails": [
+        "license",
+        "ci",
+        "staleness"
+      ],
+      "unknowns": [],
+      "warns": [
+        "description"
+      ],
+      "checks": {
+        "license": {
+          "status": "fail",
+          "detail": "no licence"
+        },
+        "readme": {
+          "status": "pass",
+          "detail": "present"
+        },
+        "ci": {
+          "status": "fail",
+          "detail": "no CI workflows"
+        },
+        "description": {
+          "status": "warn",
+          "detail": "empty"
+        },
+        "staleness": {
+          "status": "abandoned",
+          "detail": "485d",
+          "days": 485.24694089836805
+        },
+        "local_checkout": {
+          "status": "pass",
+          "detail": "cloned"
+        },
+        "local_sync": {
+          "status": "pass",
+          "detail": "in sync",
+          "head": "e4d6a5f036f9",
+          "fetch_age_days": null
+        }
+      },
+      "checked_at": "2026-11-07T11:52:27Z",
+      "previously_checked_at": null,
+      "check_age_days": null
+    },
+    {
+      "name": "live_rapidapi",
+      "full_name": "axzoraharry/live_rapidapi",
+      "fork": false,
+      "archived": false,
+      "disabled": false,
+      "private": true,
+      "default_branch": "main",
+      "language": "Python",
+      "pushed_at": "2025-07-08T12:56:14Z",
+      "staleness": {
+        "status": "abandoned",
+        "days": 486.9563279607639,
+        "label": "487d"
+      },
+      "verdict": "abandoned",
+      "fails": [
+        "license",
+        "ci",
+        "staleness"
+      ],
+      "unknowns": [],
+      "warns": [
+        "description"
+      ],
+      "checks": {
+        "license": {
+          "status": "fail",
+          "detail": "no licence"
+        },
+        "readme": {
+          "status": "pass",
+          "detail": "present"
+        },
+        "ci": {
+          "status": "fail",
+          "detail": "no CI workflows"
+        },
+        "description": {
+          "status": "warn",
+          "detail": "empty"
+        },
+        "staleness": {
+          "status": "abandoned",
+          "detail": "487d",
+          "days": 486.9563279607639
+        },
+        "local_checkout": {
+          "status": "skip",
+          "detail": "not cloned"
+        },
+        "local_sync": {
+          "status": "skip",
+          "detail": "not cloned locally",
+          "head": null,
+          "fetch_age_days": null
+        }
+      },
+      "checked_at": "2026-11-07T11:52:27Z",
+      "previously_checked_at": null,
+      "check_age_days": null
+    },
+    {
+      "name": "X1",
+      "full_name": "axzoraharry/X1",
+      "fork": false,
+      "archived": false,
+      "disabled": false,
+      "private": false,
+      "default_branch": "main",
+      "language": "JavaScript",
+      "pushed_at": "2025-07-08T09:09:16Z",
+      "staleness": {
+        "status": "abandoned",
+        "days": 487.11395374577546,
+        "label": "487d"
+      },
+      "verdict": "abandoned",
+      "fails": [
+        "license",
+        "ci",
+        "staleness"
+      ],
+      "unknowns": [],
+      "warns": [
+        "description"
+      ],
+      "checks": {
+        "license": {
+          "status": "fail",
+          "detail": "no licence"
+        },
+        "readme": {
+          "status": "pass",
+          "detail": "present"
+        },
+        "ci": {
+          "status": "fail",
+          "detail": "no CI workflows"
+        },
+        "description": {
+          "status": "warn",
+          "detail": "empty"
+        },
+        "staleness": {
+          "status": "abandoned",
+          "detail": "487d",
+          "days": 487.11395374577546
+        },
+        "local_checkout": {
+          "status": "pass",
+          "detail": "cloned"
+        },
+        "local_sync": {
+          "status": "pass",
+          "detail": "in sync",
+          "head": "63f1587b3e73",
+          "fetch_age_days": null
+        }
+      },
+      "checked_at": "2026-11-07T11:52:27Z",
+      "previously_checked_at": null,
+      "check_age_days": null
+    },
+    {
+      "name": "Happy-cricket",
+      "full_name": "axzoraharry/Happy-cricket",
+      "fork": false,
+      "archived": false,
+      "disabled": false,
+      "private": false,
+      "default_branch": "main",
+      "language": "TypeScript",
+      "pushed_at": "2025-07-02T05:51:15Z",
+      "staleness": {
+        "status": "abandoned",
+        "days": 493.2514838752199,
+        "label": "493d"
+      },
+      "verdict": "abandoned",
+      "fails": [
+        "license",
+        "ci",
+        "staleness"
+      ],
+      "unknowns": [],
+      "warns": [
+        "description"
+      ],
+      "checks": {
+        "license": {
+          "status": "fail",
+          "detail": "no licence"
+        },
+        "readme": {
+          "status": "pass",
+          "detail": "present"
+        },
+        "ci": {
+          "status": "fail",
+          "detail": "no CI workflows"
+        },
+        "description": {
+          "status": "warn",
+          "detail": "empty"
+        },
+        "staleness": {
+          "status": "abandoned",
+          "detail": "493d",
+          "days": 493.2514838752199
+        },
+        "local_checkout": {
+          "status": "pass",
+          "detail": "cloned"
+        },
+        "local_sync": {
+          "status": "pass",
+          "detail": "in sync",
+          "head": "87a4e0777316",
+          "fetch_age_days": 13.573110156770833
+        }
+      },
+      "checked_at": "2026-11-07T11:52:27Z",
+      "previously_checked_at": null,
+      "check_age_days": null
+    },
+    {
+      "name": "axzora-property-vista",
+      "full_name": "axzoraharry/axzora-property-vista",
+      "fork": false,
+      "archived": false,
+      "disabled": false,
+      "private": true,
+      "default_branch": "main",
+      "language": "TypeScript",
+      "pushed_at": "2025-06-24T03:39:43Z",
+      "staleness": {
+        "status": "abandoned",
+        "days": 501.3428392351042,
+        "label": "501d"
+      },
+      "verdict": "abandoned",
+      "fails": [
+        "license",
+        "ci",
+        "staleness"
+      ],
+      "unknowns": [],
+      "warns": [
+        "description"
+      ],
+      "checks": {
+        "license": {
+          "status": "fail",
+          "detail": "no licence"
+        },
+        "readme": {
+          "status": "pass",
+          "detail": "present"
+        },
+        "ci": {
+          "status": "fail",
+          "detail": "no CI workflows"
+        },
+        "description": {
+          "status": "warn",
+          "detail": "empty"
+        },
+        "staleness": {
+          "status": "abandoned",
+          "detail": "501d",
+          "days": 501.3428392351042
+        },
+        "local_checkout": {
+          "status": "pass",
+          "detail": "cloned"
+        },
+        "local_sync": {
+          "status": "pass",
+          "detail": "in sync",
+          "head": "e3bc5d970525",
+          "fetch_age_days": 13.572880120798612
+        }
+      },
+      "checked_at": "2026-11-07T11:52:27Z",
+      "previously_checked_at": null,
+      "check_age_days": null
+    },
+    {
+      "name": "happy-wallet",
+      "full_name": "axzoraharry/happy-wallet",
+      "fork": false,
+      "archived": false,
+      "disabled": false,
+      "private": false,
+      "default_branch": "main",
+      "language": "TypeScript",
+      "pushed_at": "2025-06-18T20:23:50Z",
+      "staleness": {
+        "status": "abandoned",
+        "days": 506.64554657655094,
+        "label": "507d"
+      },
+      "verdict": "abandoned",
+      "fails": [
+        "license",
+        "readme",
+        "ci",
+        "staleness"
+      ],
+      "unknowns": [],
+      "warns": [
+        "description"
+      ],
+      "checks": {
+        "license": {
+          "status": "fail",
+          "detail": "no licence"
+        },
+        "readme": {
+          "status": "fail",
+          "detail": "no README"
+        },
+        "ci": {
+          "status": "fail",
+          "detail": "no CI workflows"
+        },
+        "description": {
+          "status": "warn",
+          "detail": "empty"
+        },
+        "staleness": {
+          "status": "abandoned",
+          "detail": "507d",
+          "days": 506.64554657655094
+        },
+        "local_checkout": {
+          "status": "pass",
+          "detail": "cloned"
+        },
+        "local_sync": {
+          "status": "pass",
+          "detail": "in sync",
+          "head": "e2800028d661",
+          "fetch_age_days": null
+        }
+      },
+      "checked_at": "2026-11-07T11:52:27Z",
+      "previously_checked_at": null,
+      "check_age_days": null
+    },
+    {
+      "name": "happy-hub",
+      "full_name": "axzoraharry/happy-hub",
+      "fork": false,
+      "archived": false,
+      "disabled": false,
+      "private": false,
+      "default_branch": "main",
+      "language": "TypeScript",
+      "pushed_at": "2025-06-18T10:13:50Z",
+      "staleness": {
+        "status": "abandoned",
+        "days": 507.069170479919,
+        "label": "507d"
+      },
+      "verdict": "abandoned",
+      "fails": [
+        "license",
+        "readme",
+        "ci",
+        "staleness"
+      ],
+      "unknowns": [],
+      "warns": [
+        "description"
+      ],
+      "checks": {
+        "license": {
+          "status": "fail",
+          "detail": "no licence"
+        },
+        "readme": {
+          "status": "fail",
+          "detail": "no README"
+        },
+        "ci": {
+          "status": "fail",
+          "detail": "no CI workflows"
+        },
+        "description": {
+          "status": "warn",
+          "detail": "empty"
+        },
+        "staleness": {
+          "status": "abandoned",
+          "detail": "507d",
+          "days": 507.069170479919
+        },
+        "local_checkout": {
+          "status": "pass",
+          "detail": "cloned"
+        },
+        "local_sync": {
+          "status": "pass",
+          "detail": "in sync",
+          "head": "7b693ae9193d",
+          "fetch_age_days": 13.572804280497685
+        }
+      },
+      "checked_at": "2026-11-07T11:52:27Z",
+      "previously_checked_at": null,
+      "check_age_days": null
+    },
+    {
+      "name": "n-347803",
+      "full_name": "axzoraharry/n-347803",
+      "fork": false,
+      "archived": false,
+      "disabled": false,
+      "private": true,
+      "default_branch": "main",
+      "language": "TypeScript",
+      "pushed_at": "2025-06-16T16:06:39Z",
+      "staleness": {
+        "status": "abandoned",
+        "days": 508.82417608956024,
+        "label": "509d"
+      },
+      "verdict": "abandoned",
+      "fails": [
+        "license",
+        "ci",
+        "staleness"
+      ],
+      "unknowns": [],
+      "warns": [
+        "description"
+      ],
+      "checks": {
+        "license": {
+          "status": "fail",
+          "detail": "no licence"
+        },
+        "readme": {
+          "status": "pass",
+          "detail": "present"
+        },
+        "ci": {
+          "status": "fail",
+          "detail": "no CI workflows"
+        },
+        "description": {
+          "status": "warn",
+          "detail": "empty"
+        },
+        "staleness": {
+          "status": "abandoned",
+          "detail": "509d",
+          "days": 508.82417608956024
+        },
+        "local_checkout": {
+          "status": "pass",
+          "detail": "cloned"
+        },
+        "local_sync": {
+          "status": "pass",
+          "detail": "in sync",
+          "head": "e93bc2fcb539",
+          "fetch_age_days": null
+        }
+      },
+      "checked_at": "2026-11-07T11:52:27Z",
+      "previously_checked_at": null,
+      "check_age_days": null
+    },
+    {
+      "name": "aura-asset-manager",
+      "full_name": "axzoraharry/aura-asset-manager",
+      "fork": false,
+      "archived": false,
+      "disabled": false,
+      "private": true,
+      "default_branch": "main",
+      "language": "TypeScript",
+      "pushed_at": "2025-06-13T11:32:50Z",
+      "staleness": {
+        "status": "abandoned",
+        "days": 512.0143467634028,
+        "label": "512d"
+      },
+      "verdict": "abandoned",
+      "fails": [
+        "license",
+        "ci",
+        "staleness"
+      ],
+      "unknowns": [],
+      "warns": [
+        "description"
+      ],
+      "checks": {
+        "license": {
+          "status": "fail",
+          "detail": "no licence"
+        },
+        "readme": {
+          "status": "pass",
+          "detail": "present"
+        },
+        "ci": {
+          "status": "fail",
+          "detail": "no CI workflows"
+        },
+        "description": {
+          "status": "warn",
+          "detail": "empty"
+        },
+        "staleness": {
+          "status": "abandoned",
+          "detail": "512d",
+          "days": 512.0143467634028
+        },
+        "local_checkout": {
+          "status": "pass",
+          "detail": "cloned"
+        },
+        "local_sync": {
+          "status": "pass",
+          "detail": "in sync",
+          "head": "e84913325202",
+          "fetch_age_days": 13.573060600752314
+        }
+      },
+      "checked_at": "2026-11-07T11:52:27Z",
+      "previously_checked_at": null,
+      "check_age_days": null
+    },
+    {
+      "name": "empower-workforce-suite",
+      "full_name": "axzoraharry/empower-workforce-suite",
+      "fork": false,
+      "archived": false,
+      "disabled": false,
+      "private": true,
+      "default_branch": "main",
+      "language": "TypeScript",
+      "pushed_at": "2025-06-12T10:08:20Z",
+      "staleness": {
+        "status": "abandoned",
+        "days": 513.0730485394675,
+        "label": "513d"
+      },
+      "verdict": "abandoned",
+      "fails": [
+        "license",
+        "ci",
+        "staleness"
+      ],
+      "unknowns": [],
+      "warns": [
+        "description"
+      ],
+      "checks": {
+        "license": {
+          "status": "fail",
+          "detail": "no licence"
+        },
+        "readme": {
+          "status": "pass",
+          "detail": "present"
+        },
+        "ci": {
+          "status": "fail",
+          "detail": "no CI workflows"
+        },
+        "description": {
+          "status": "warn",
+          "detail": "empty"
+        },
+        "staleness": {
+          "status": "abandoned",
+          "detail": "513d",
+          "days": 513.0730485394675
+        },
+        "local_checkout": {
+          "status": "pass",
+          "detail": "cloned"
+        },
+        "local_sync": {
+          "status": "pass",
+          "detail": "in sync",
+          "head": "7a3bf6b7ccdf",
+          "fetch_age_days": 13.572892562199074
+        }
+      },
+      "checked_at": "2026-11-07T11:52:27Z",
+      "previously_checked_at": null,
+      "check_age_days": null
+    },
+    {
+      "name": "HappyCoin-App",
+      "full_name": "axzoraharry/HappyCoin-App",
+      "fork": false,
+      "archived": false,
+      "disabled": false,
+      "private": true,
+      "default_branch": "main",
+      "language": "Python",
+      "pushed_at": "2025-06-09T18:27:18Z",
+      "staleness": {
+        "status": "abandoned",
+        "days": 515.7265603170023,
+        "label": "516d"
+      },
+      "verdict": "abandoned",
+      "fails": [
+        "license",
+        "ci",
+        "staleness"
+      ],
+      "unknowns": [],
+      "warns": [
+        "description"
+      ],
+      "checks": {
+        "license": {
+          "status": "fail",
+          "detail": "no licence"
+        },
+        "readme": {
+          "status": "pass",
+          "detail": "present"
+        },
+        "ci": {
+          "status": "fail",
+          "detail": "no CI workflows"
+        },
+        "description": {
+          "status": "warn",
+          "detail": "empty"
+        },
+        "staleness": {
+          "status": "abandoned",
+          "detail": "516d",
+          "days": 515.7265603170023
+        },
+        "local_checkout": {
+          "status": "pass",
+          "detail": "cloned"
+        },
+        "local_sync": {
+          "status": "pass",
+          "detail": "in sync",
+          "head": "c1e3e1f01cd0",
+          "fetch_age_days": null
+        }
+      },
+      "checked_at": "2026-11-07T11:52:27Z",
+      "previously_checked_at": null,
+      "check_age_days": null
+    },
+    {
+      "name": "n-244329",
+      "full_name": "axzoraharry/n-244329",
+      "fork": false,
+      "archived": false,
+      "disabled": false,
+      "private": true,
+      "default_branch": "main",
+      "language": "TypeScript",
+      "pushed_at": "2025-05-14T13:19:42Z",
+      "staleness": {
+        "status": "abandoned",
+        "days": 541.9401883867245,
+        "label": "542d"
+      },
+      "verdict": "abandoned",
+      "fails": [
+        "license",
+        "ci",
+        "staleness"
+      ],
+      "unknowns": [],
+      "warns": [
+        "description"
+      ],
+      "checks": {
+        "license": {
+          "status": "fail",
+          "detail": "no licence"
+        },
+        "readme": {
+          "status": "pass",
+          "detail": "present"
+        },
+        "ci": {
+          "status": "fail",
+          "detail": "no CI workflows"
+        },
+        "description": {
+          "status": "warn",
+          "detail": "empty"
+        },
+        "staleness": {
+          "status": "abandoned",
+          "detail": "542d",
+          "days": 541.9401883867245
+        },
+        "local_checkout": {
+          "status": "pass",
+          "detail": "cloned"
+        },
+        "local_sync": {
+          "status": "pass",
+          "detail": "in sync",
+          "head": "900c7de73f3f",
+          "fetch_age_days": null
+        }
+      },
+      "checked_at": "2026-11-07T11:52:27Z",
+      "previously_checked_at": null,
+      "check_age_days": null
+    },
+    {
+      "name": "happy-metaverse",
+      "full_name": "axzoraharry/happy-metaverse",
+      "fork": false,
+      "archived": false,
+      "disabled": false,
+      "private": true,
+      "default_branch": "main",
+      "language": "TypeScript",
+      "pushed_at": "2025-05-12T11:32:38Z",
+      "staleness": {
+        "status": "abandoned",
+        "days": 544.0145590073959,
+        "label": "544d"
+      },
+      "verdict": "abandoned",
+      "fails": [
+        "license",
+        "ci",
+        "staleness"
+      ],
+      "unknowns": [],
+      "warns": [
+        "description"
+      ],
+      "checks": {
+        "license": {
+          "status": "fail",
+          "detail": "no licence"
+        },
+        "readme": {
+          "status": "pass",
+          "detail": "present"
+        },
+        "ci": {
+          "status": "fail",
+          "detail": "no CI workflows"
+        },
+        "description": {
+          "status": "warn",
+          "detail": "empty"
+        },
+        "staleness": {
+          "status": "abandoned",
+          "detail": "544d",
+          "days": 544.0145590073959
+        },
+        "local_checkout": {
+          "status": "pass",
+          "detail": "cloned"
+        },
+        "local_sync": {
+          "status": "pass",
+          "detail": "in sync",
+          "head": "fb95a7617a73",
+          "fetch_age_days": 13.572905658009258
+        }
+      },
+      "checked_at": "2026-11-07T11:52:27Z",
+      "previously_checked_at": null,
+      "check_age_days": null
+    },
+    {
+      "name": "v0-untitled-project-nd",
+      "full_name": "axzoraharry/v0-untitled-project-nd",
+      "fork": false,
+      "archived": false,
+      "disabled": false,
+      "private": true,
+      "default_branch": "main",
+      "language": "TypeScript",
+      "pushed_at": "2025-04-26T21:39:39Z",
+      "staleness": {
+        "status": "abandoned",
+        "days": 559.5930409494445,
+        "label": "560d"
+      },
+      "verdict": "abandoned",
+      "fails": [
+        "license",
+        "ci",
+        "staleness"
+      ],
+      "unknowns": [],
+      "warns": [
+        "description"
+      ],
+      "checks": {
+        "license": {
+          "status": "fail",
+          "detail": "no licence"
+        },
+        "readme": {
+          "status": "pass",
+          "detail": "present"
+        },
+        "ci": {
+          "status": "fail",
+          "detail": "no CI workflows"
+        },
+        "description": {
+          "status": "warn",
+          "detail": "empty"
+        },
+        "staleness": {
+          "status": "abandoned",
+          "detail": "560d",
+          "days": 559.5930409494445
+        },
+        "local_checkout": {
+          "status": "pass",
+          "detail": "cloned"
+        },
+        "local_sync": {
+          "status": "pass",
+          "detail": "in sync",
+          "head": "1746fc795714",
+          "fetch_age_days": null
+        }
+      },
+      "checked_at": "2026-11-07T11:52:27Z",
+      "previously_checked_at": null,
+      "check_age_days": null
+    },
+    {
+      "name": "helo",
+      "full_name": "axzoraharry/helo",
+      "fork": false,
+      "archived": false,
+      "disabled": false,
+      "private": true,
+      "default_branch": "main",
+      "language": "TypeScript",
+      "pushed_at": "2025-04-26T21:20:14Z",
+      "staleness": {
+        "status": "abandoned",
+        "days": 559.606546326007,
+        "label": "560d"
+      },
+      "verdict": "abandoned",
+      "fails": [
+        "license",
+        "ci",
+        "staleness"
+      ],
+      "unknowns": [],
+      "warns": [
+        "description"
+      ],
+      "checks": {
+        "license": {
+          "status": "fail",
+          "detail": "no licence"
+        },
+        "readme": {
+          "status": "pass",
+          "detail": "present"
+        },
+        "ci": {
+          "status": "fail",
+          "detail": "no CI workflows"
+        },
+        "description": {
+          "status": "warn",
+          "detail": "empty"
+        },
+        "staleness": {
+          "status": "abandoned",
+          "detail": "560d",
+          "days": 559.606546326007
+        },
+        "local_checkout": {
+          "status": "pass",
+          "detail": "cloned"
+        },
+        "local_sync": {
+          "status": "pass",
+          "detail": "in sync",
+          "head": "8530041b5617",
+          "fetch_age_days": null
+        }
+      },
+      "checked_at": "2026-11-07T11:52:27Z",
+      "previously_checked_at": null,
+      "check_age_days": null
+    },
+    {
+      "name": "ai-sdk-starter-deepinfra",
+      "full_name": "axzoraharry/ai-sdk-starter-deepinfra",
+      "fork": false,
+      "archived": false,
+      "disabled": false,
+      "private": true,
+      "default_branch": "main",
+      "language": "TypeScript",
+      "pushed_at": "2025-04-24T07:28:20Z",
+      "staleness": {
+        "status": "abandoned",
+        "days": 562.1842725314006,
+        "label": "562d"
+      },
+      "verdict": "abandoned",
+      "fails": [
+        "license",
+        "ci",
+        "staleness"
+      ],
+      "unknowns": [],
+      "warns": [
+        "description"
+      ],
+      "checks": {
+        "license": {
+          "status": "fail",
+          "detail": "no licence"
+        },
+        "readme": {
+          "status": "pass",
+          "detail": "present"
+        },
+        "ci": {
+          "status": "fail",
+          "detail": "no CI workflows"
+        },
+        "description": {
+          "status": "warn",
+          "detail": "empty"
+        },
+        "staleness": {
+          "status": "abandoned",
+          "detail": "562d",
+          "days": 562.1842725314006
+        },
+        "local_checkout": {
+          "status": "pass",
+          "detail": "cloned"
+        },
+        "local_sync": {
+          "status": "pass",
+          "detail": "in sync",
+          "head": "46e61b0c136a",
+          "fetch_age_days": 13.57320539170139
+        }
+      },
+      "checked_at": "2026-11-07T11:52:27Z",
+      "previously_checked_at": null,
+      "check_age_days": null
+    },
+    {
+      "name": "hhh",
+      "full_name": "axzoraharry/hhh",
+      "fork": false,
+      "archived": false,
+      "disabled": false,
+      "private": true,
+      "default_branch": "main",
+      "language": "TypeScript",
+      "pushed_at": "2025-04-23T11:46:47Z",
+      "staleness": {
+        "status": "abandoned",
+        "days": 563.0048111039815,
+        "label": "563d"
+      },
+      "verdict": "abandoned",
+      "fails": [
+        "ci",
+        "staleness"
+      ],
+      "unknowns": [],
+      "warns": [
+        "description"
+      ],
+      "checks": {
+        "license": {
+          "status": "pass",
+          "detail": "MIT"
+        },
+        "readme": {
+          "status": "pass",
+          "detail": "present"
+        },
+        "ci": {
+          "status": "fail",
+          "detail": "no CI workflows"
+        },
+        "description": {
+          "status": "warn",
+          "detail": "empty"
+        },
+        "staleness": {
+          "status": "abandoned",
+          "detail": "563d",
+          "days": 563.0048111039815
+        },
+        "local_checkout": {
+          "status": "pass",
+          "detail": "cloned"
+        },
+        "local_sync": {
+          "status": "pass",
+          "detail": "in sync",
+          "head": "fbf6c75d4f9b",
+          "fetch_age_days": null
+        }
+      },
+      "checked_at": "2026-11-07T11:52:27Z",
+      "previously_checked_at": null,
+      "check_age_days": null
+    },
+    {
+      "name": "nextjs-enterprise-boilerplate",
+      "full_name": "axzoraharry/nextjs-enterprise-boilerplate",
+      "fork": false,
+      "archived": false,
+      "disabled": false,
+      "private": true,
+      "default_branch": "main",
+      "language": "TypeScript",
+      "pushed_at": "2025-04-23T11:37:31Z",
+      "staleness": {
+        "status": "abandoned",
+        "days": 563.0112720709491,
+        "label": "563d"
+      },
+      "verdict": "abandoned",
+      "fails": [
+        "ci",
+        "staleness"
+      ],
+      "unknowns": [],
+      "warns": [
+        "description"
+      ],
+      "checks": {
+        "license": {
+          "status": "pass",
+          "detail": "MIT"
+        },
+        "readme": {
+          "status": "pass",
+          "detail": "present"
+        },
+        "ci": {
+          "status": "fail",
+          "detail": "no CI workflows"
+        },
+        "description": {
+          "status": "warn",
+          "detail": "empty"
+        },
+        "staleness": {
+          "status": "abandoned",
+          "detail": "563d",
+          "days": 563.0112720709491
+        },
+        "local_checkout": {
+          "status": "pass",
+          "detail": "cloned"
+        },
+        "local_sync": {
+          "status": "pass",
+          "detail": "in sync",
+          "head": "98337d8aadf7",
+          "fetch_age_days": null
+        }
+      },
+      "checked_at": "2026-11-07T11:52:27Z",
+      "previously_checked_at": null,
+      "check_age_days": null
+    },
+    {
+      "name": "happy-cricket-fantasy",
+      "full_name": "axzoraharry/happy-cricket-fantasy",
+      "fork": false,
+      "archived": false,
+      "disabled": false,
+      "private": true,
+      "default_branch": "main",
+      "language": "TypeScript",
+      "pushed_at": "2025-04-29T13:44:24Z",
+      "staleness": {
+        "status": "abandoned",
+        "days": 556.9231848275116,
+        "label": "557d"
+      },
+      "verdict": "abandoned",
+      "fails": [
+        "license",
+        "readme",
+        "ci",
+        "staleness"
+      ],
+      "unknowns": [],
+      "warns": [
+        "description"
+      ],
+      "checks": {
+        "license": {
+          "status": "fail",
+          "detail": "no licence"
+        },
+        "readme": {
+          "status": "fail",
+          "detail": "no README"
+        },
+        "ci": {
+          "status": "fail",
+          "detail": "no CI workflows"
+        },
+        "description": {
+          "status": "warn",
+          "detail": "empty"
+        },
+        "staleness": {
+          "status": "abandoned",
+          "detail": "557d",
+          "days": 556.9231848275116
+        },
+        "local_checkout": {
+          "status": "pass",
+          "detail": "cloned"
+        },
+        "local_sync": {
+          "status": "pass",
+          "detail": "in sync",
+          "head": "d70bb848b9ee",
+          "fetch_age_days": 13.573055715231481
+        }
+      },
+      "checked_at": "2026-11-07T11:52:27Z",
+      "previously_checked_at": null,
+      "check_age_days": null
+    },
+    {
+      "name": "v0-untitled-project",
+      "full_name": "axzoraharry/v0-untitled-project",
+      "fork": false,
+      "archived": false,
+      "disabled": false,
+      "private": true,
+      "default_branch": "main",
+      "language": null,
+      "pushed_at": "2025-04-20T12:38:57Z",
+      "staleness": {
+        "status": "abandoned",
+        "days": 565.9686586482522,
+        "label": "566d"
+      },
+      "verdict": "abandoned",
+      "fails": [
+        "license",
+        "ci",
+        "staleness"
+      ],
+      "unknowns": [],
+      "warns": [
+        "description"
+      ],
+      "checks": {
+        "license": {
+          "status": "fail",
+          "detail": "no licence"
+        },
+        "readme": {
+          "status": "pass",
+          "detail": "present"
+        },
+        "ci": {
+          "status": "fail",
+          "detail": "no CI workflows"
+        },
+        "description": {
+          "status": "warn",
+          "detail": "empty"
+        },
+        "staleness": {
+          "status": "abandoned",
+          "detail": "566d",
+          "days": 565.9686586482522
+        },
+        "local_checkout": {
+          "status": "pass",
+          "detail": "cloned"
+        },
+        "local_sync": {
+          "status": "pass",
+          "detail": "in sync",
+          "head": "f5f89a8207b0",
+          "fetch_age_days": null
+        }
+      },
+      "checked_at": "2026-11-07T11:52:27Z",
+      "previously_checked_at": null,
+      "check_age_days": null
+    },
+    {
+      "name": "ikalki",
+      "full_name": "axzoraharry/ikalki",
+      "fork": false,
+      "archived": false,
+      "disabled": false,
+      "private": true,
+      "default_branch": "main",
+      "language": "Python",
+      "pushed_at": "2025-03-23T17:48:49Z",
+      "staleness": {
+        "status": "abandoned",
+        "days": 593.7534961343634,
+        "label": "594d"
+      },
+      "verdict": "abandoned",
+      "fails": [
+        "license",
+        "staleness"
+      ],
+      "unknowns": [],
+      "warns": [
+        "description"
+      ],
+      "checks": {
+        "license": {
+          "status": "fail",
+          "detail": "no licence"
+        },
+        "readme": {
+          "status": "pass",
+          "detail": "present"
+        },
+        "ci": {
+          "status": "pass",
+          "detail": "1 workflow(s)"
+        },
+        "description": {
+          "status": "warn",
+          "detail": "empty"
+        },
+        "staleness": {
+          "status": "abandoned",
+          "detail": "594d",
+          "days": 593.7534961343634
+        },
+        "local_checkout": {
+          "status": "pass",
+          "detail": "cloned"
+        },
+        "local_sync": {
+          "status": "pass",
+          "detail": "in sync",
+          "head": "4e966e051a42",
+          "fetch_age_days": null
+        }
+      },
+      "checked_at": "2026-11-07T11:52:27Z",
+      "previously_checked_at": null,
+      "check_age_days": null
+    }
+  ]
+}
