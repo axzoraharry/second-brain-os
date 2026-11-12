@@ -1,0 +1,50 @@
+name: ci
+
+# Runs on every pull request and on pushes to main:
+#   - the repo-checks unit tests
+#   - a link check over the starter vault
+#   - a rebuild of the generated site files, failing if they differ from
+#     what is committed (rerun the builders and commit the result)
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install "requests>=2.31,<3" markdown
+
+      - name: repo-checks unit tests
+        working-directory: repo-checks
+        run: python3 -m unittest discover -s tests -v
+
+      - name: Starter vault link check
+        run: |
+          python3 scripts/link_check.py vault-template --json > link-report.json
+          python3 -c "import json,sys; b=json.load(open('link-report.json'))['broken']; print('broken links:', b); sys.exit(1 if b else 0)"
+          rm link-report.json
+
+      - name: Generated site files are up to date
+        run: |
+          python3 scripts/build_tracks.py
+          python3 tools/build_graph_site.py
+          python3 tools/extract_site.py
+          python3 tools/build_site.py
+          python3 scripts/build_tree.py
+          git diff --exit-code || {
+            echo "::error::Generated files are stale. Run the builders in tools/README.md and commit the result."
+            exit 1
+          }
