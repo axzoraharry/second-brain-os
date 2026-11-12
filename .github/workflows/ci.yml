@@ -1,7 +1,7 @@
 name: ci
 
 # Runs on every pull request and on pushes to main:
-#   - the repo-checks unit tests
+#   - the repo-checks and lead-gen unit tests
 #   - a link check over the starter vault
 #   - a rebuild of the generated site files, failing if they differ from
 #     what is committed (rerun the builders and commit the result)
@@ -30,6 +30,9 @@ jobs:
       - name: repo-checks unit tests
         working-directory: repo-checks
         run: python3 -m unittest discover -s tests -v
+
+      - name: lead-gen pipeline tests
+        run: python3 -m unittest discover -s plugins/lead-gen/tests -v
 
       - name: Starter vault link check
         run: |
