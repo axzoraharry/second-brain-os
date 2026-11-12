@@ -21,8 +21,8 @@ import markdown
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, "assets", "site")
-GH_BLOB = "https://github.com/undefined-ui/second-brain-os/blob/main/"
-GH_TREE = "https://github.com/undefined-ui/second-brain-os/tree/main/"
+GH_BLOB = "https://github.com/axzoraharry/second-brain-os/blob/main/"
+GH_TREE = "https://github.com/axzoraharry/second-brain-os/tree/main/"
 
 MD = markdown.Markdown(extensions=["tables", "fenced_code", "toc", "sane_lists"])
 

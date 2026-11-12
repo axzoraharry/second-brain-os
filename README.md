@@ -49,7 +49,7 @@ where every entry has a reason to be here. Here you will find:
 
 ```bash
 # copy the starter vault, skills, commands, agents and scripts
-git clone https://github.com/undefined-ui/second-brain-os.git
+git clone https://github.com/axzoraharry/second-brain-os.git
 cp -r second-brain-os/vault-template ~/brain
 
 mkdir -p ~/brain/.claude
@@ -319,7 +319,7 @@ Harden, measure and ship agents, then go deep on one layer at a time. Every hand
 #### [The agents-course plugin](plugins/README.md) <sub>each tool does one module's practice page in your repo</sub>
 
 ```bash
-claude plugin marketplace add undefined-ui/second-brain-os
+claude plugin marketplace add axzoraharry/second-brain-os
 claude plugin install agents-course@second-brain-os
 ```
 
@@ -486,6 +486,12 @@ MIT licensed. The agents course builds on Google's agent whitepapers. The
 second-brain project implements Andrej Karpathy's LLM wiki pattern, published
 as a [gist](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f)
 on 4 April 2026, plus the parts the gist deliberately leaves undefined.
+
+This repository is a fork of
+[undefined-ui/second-brain-os](https://github.com/undefined-ui/second-brain-os)
+by [@undefinedKi](https://x.com/undefinedKi). The fork adds
+[`repo-checks/`](repo-checks/README.md), a repository health engine and its
+dashboard.
 
 <!-- TODO before publishing:
      - add the link to the original article

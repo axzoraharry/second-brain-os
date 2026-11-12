@@ -6,7 +6,7 @@
     "name": "undefinedKi"
   },
   "homepage": "https://secondbrainos.dev/#/read/course-0-map/what-an-agent-is",
-  "repository": "https://github.com/undefined-ui/second-brain-os",
+  "repository": "https://github.com/axzoraharry/second-brain-os",
   "license": "MIT",
   "keywords": ["agents", "evals", "context-engineering", "loops", "course"]
 }

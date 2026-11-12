@@ -10,7 +10,7 @@ import json, os, html
 D = json.load(open("site_data.json"))
 OUT = "."
 os.makedirs(OUT, exist_ok=True)
-REPO = "https://github.com/undefined-ui/second-brain-os"
+REPO = "https://github.com/axzoraharry/second-brain-os"
 # the bits every page shares: favicon, analytics, author
 ICON = '<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 32 32\'%3E%3Crect width=\'32\' height=\'32\' rx=\'7\' fill=\'%23F7F9F6\'/%3E%3Crect x=\'.5\' y=\'.5\' width=\'31\' height=\'31\' rx=\'6.5\' fill=\'none\' stroke=\'%23D2DACF\'/%3E%3Cpath d=\'M10 21 L16 11 L22 19 M16 11 L23 9\' stroke=\'%231F6B52\' stroke-width=\'1.6\' fill=\'none\'/%3E%3Ccircle cx=\'10\' cy=\'21\' r=\'3\' fill=\'%23F7F9F6\' stroke=\'%231F6B52\' stroke-width=\'1.6\'/%3E%3Ccircle cx=\'16\' cy=\'11\' r=\'3\' fill=\'%23F7F9F6\' stroke=\'%231F6B52\' stroke-width=\'1.6\'/%3E%3Ccircle cx=\'22\' cy=\'19\' r=\'3\' fill=\'%23F7F9F6\' stroke=\'%231F6B52\' stroke-width=\'1.6\'/%3E%3Ccircle cx=\'24\' cy=\'8\' r=\'2\' fill=\'%231F6B52\'/%3E%3C/svg%3E">'
 BEACON = '<!-- Cloudflare Web Analytics --><script type=\'module\' src=\'https://static.cloudflareinsights.com/beacon.min.js\' data-cf-beacon=\'{"token": "251090521ca24c01bde87a953db3dea4"}\'></script><!-- End Cloudflare Web Analytics -->'
@@ -196,6 +196,7 @@ def header(active):
     <a href="index.html" class="{'on' if active=='guide' else ''}">Map</a>
     <a href="resources.html" class="{'on' if active=='res' else ''}">Resources</a>
     <a href="tree.html">Tree</a>
+    <a href="repo-checks/dashboard.html">Repo health</a>
     <a href="{REPO}">Repo</a>
   </nav>
   <button class="theme" id="theme" aria-label="Switch between light and dark theme">&#9790;</button>
@@ -280,7 +281,7 @@ GUIDE = f"""<!DOCTYPE html><html lang="en"><head>
   <main id="main"></main>
   <div class="rail" id="rail"></div>
 </div>
-<footer>Generated from the repository. <a href="{REPO}">github.com/undefined-ui/second-brain-os</a></footer>
+<footer>Generated from the repository. <a href="{REPO}">github.com/axzoraharry/second-brain-os</a></footer>
 <script id="data" type="application/json">{json.dumps({k:D[k] for k in ['pages','sections','order']})}</script>
 <script>
 const D=JSON.parse(document.getElementById('data').textContent);
@@ -414,7 +415,7 @@ RES = f"""<!DOCTYPE html><html lang="en"><head>
   <div class="count" id="count"></div>
   <div id="rows"></div>
 </div>
-<footer>Generated from the repository. <a href="{REPO}">github.com/undefined-ui/second-brain-os</a>{AUTHOR}</footer>
+<footer>Generated from the repository. <a href="{REPO}">github.com/axzoraharry/second-brain-os</a>{AUTHOR}</footer>
 <script id="rdata" type="application/json">{json.dumps(R)}</script>
 <script>
 const R=JSON.parse(document.getElementById('rdata').textContent);
