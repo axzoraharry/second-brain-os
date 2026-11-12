@@ -19,6 +19,7 @@ reason to be here. Here you will find:
 - **The agents course:** seven modules from a single prompt to a production agent, covering context, loops, gates, harnesses, evals and production
 - **Five handbooks** that go deep on one layer each: knowledge graphs, gates, harnesses, loops and evals
 - **A hands-on project:** a second brain, a knowledge base an agent builds and maintains for you in plain markdown
+- **A business project:** a [lead generation desk](plugins/lead-gen/README.md), six agents that find, qualify and draft outreach while you approve every message
 - **A working toolkit:** a Claude Code plugin for the course, plus 18 skills, 72 slash commands and 6 subagents for the project
 - **114 vetted resources**, and what landed this month, checked at the source
 - **Plain markdown, MIT licensed.** No signup, nothing to install to read it
@@ -331,6 +332,21 @@ claude plugin install agents-course@second-brain-os
 - [**harness-audit**](plugins/agents-course/skills/harness-audit/SKILL.md) - Walk the four rings, state the blast radius, rank the fixes
 - [**evals-bootstrap**](plugins/agents-course/skills/evals-bootstrap/SKILL.md) - Mine real failures into cases and generate the trace checker
 - [**loop-critic**](plugins/agents-course/agents/loop-critic.md) - An agent that reviews loop results in a clean context
+
+#### [The lead-gen plugin](plugins/lead-gen/README.md) <sub>a lead generation desk: agents draft, you approve and send</sub>
+
+```bash
+claude plugin install lead-gen@second-brain-os
+```
+
+- [**setup**](plugins/lead-gen/skills/setup/SKILL.md) - Interview for your offer, ideal customer and rules; creates the desk
+- [**run**](plugins/lead-gen/skills/run/SKILL.md) - One session: replies, qualification, drafts, review, more leads
+- [**approve**](plugins/lead-gen/skills/approve/SKILL.md) - Your decisions and your approval of each draft
+- [**export**](plugins/lead-gen/skills/export/SKILL.md) - The approved batch as a CSV for your own sending tool
+- [**reply**](plugins/lead-gen/skills/reply/SKILL.md) - Classify a reply, suggest a response, suppress on request
+- [**call-prep**](plugins/lead-gen/skills/call-prep/SKILL.md) - A one-page brief for a call you make yourself
+- [**Six agents**](plugins/lead-gen/README.md#the-team) - Director, prospector, qualifier, copywriter, compliance reviewer, reply handler
+- [**pipeline.py**](plugins/lead-gen/skills/setup/template/tools/pipeline.py) - The gate: suppression, consent, review, sign-off and daily cap
 
 #### [Skills](skills/README.md) <sub>second brain, one per workflow</sub>
 - [**second-brain-ingest**](skills/second-brain-ingest/SKILL.md) - Turn raw sources into linked wiki pages

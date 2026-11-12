@@ -1,0 +1,11 @@
+{
+  "name": "lead-gen",
+  "version": "0.1.0",
+  "description": "A lead generation desk: six agents find, qualify and draft outreach to business leads, you approve every message, and a script enforces the suppression list, consent and daily cap.",
+  "author": {
+    "name": "Axzora"
+  },
+  "repository": "https://github.com/axzoraharry/second-brain-os",
+  "license": "MIT",
+  "keywords": ["lead-generation", "outreach", "sales", "agents", "human-in-the-loop"]
+}
