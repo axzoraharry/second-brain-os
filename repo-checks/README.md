@@ -2,7 +2,7 @@
 
 A self-contained engine that verifies every repository on a GitHub account and
 logs an honest, timestamped verdict per repo. It is the "admin table" for the
-Second Brain OS surface: GitHub repos, AI-agent clones, and local checkouts —
+Axzora Brain OS surface: GitHub repos, AI-agent clones, and local checkouts —
 one interface that says *pass / fail / unknown / skip* per check, with **unknown
 stated explicitly rather than guessed**.
 

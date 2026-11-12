@@ -102,8 +102,8 @@ def edge(s, t, kind, w=1, hidden=False):
     edges.append(e)
 
 
-node("root", type="root", group="root", label="Second Brain OS",
-     desc="Guides and resources for AI engineers: a course on building agents "
+node("root", type="root", group="root", label="Axzora Brain OS",
+     desc="Guides and resources for building AI agents that automate real work: a course on building agents "
           "from a single prompt to production, five handbooks that go deep on "
           "one layer each, a hands-on second-brain project, the toolkit, and "
           "the links worth your time.")

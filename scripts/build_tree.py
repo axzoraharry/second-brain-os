@@ -290,7 +290,7 @@ def main():
 
 TEMPLATE = """<!DOCTYPE html><html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<script>try{var t=JSON.parse(localStorage.getItem('sbos:theme'));if(t==='dark'||t==='light')document.documentElement.dataset.theme=t}catch(e){}</script><title>The full component tree - Second Brain OS</title>
+<script>try{var t=JSON.parse(localStorage.getItem('sbos:theme'));if(t==='dark'||t==='light')document.documentElement.dataset.theme=t}catch(e){}</script><title>The full component tree - Axzora Brain OS</title>
 <meta name="description" content="Every component in second-brain-os on one page: the agents course, five handbooks, the second-brain project, skills, commands, agents, scripts and resources, each line a link.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23F7F9F6'/%3E%3Crect x='.5' y='.5' width='31' height='31' rx='6.5' fill='none' stroke='%23D2DACF'/%3E%3Cpath d='M10 21 L16 11 L22 19 M16 11 L23 9' stroke='%231F6B52' stroke-width='1.6' fill='none'/%3E%3Ccircle cx='10' cy='21' r='3' fill='%23F7F9F6' stroke='%231F6B52' stroke-width='1.6'/%3E%3Ccircle cx='16' cy='11' r='3' fill='%23F7F9F6' stroke='%231F6B52' stroke-width='1.6'/%3E%3Ccircle cx='22' cy='19' r='3' fill='%23F7F9F6' stroke='%231F6B52' stroke-width='1.6'/%3E%3Ccircle cx='24' cy='8' r='2' fill='%231F6B52'/%3E%3C/svg%3E">
 <style>
@@ -341,7 +341,7 @@ footer{border-top:1px solid var(--rule);padding:22px;text-align:center;color:var
 </style>
 </head><body>
 <header><div class="bar">
-  <a class="brand" href="index.html">[[ second<span>brain</span>os ]]</a>
+  <a class="brand" href="index.html">[[ axzora<span>brain</span>os ]]</a>
   <nav>
     <a href="index.html">Map</a>
     <a href="resources.html">Resources</a>
@@ -361,7 +361,7 @@ footer{border-top:1px solid var(--rule);padding:22px;text-align:center;color:var
   <div class="cols">{{TREE}}</div>
   <div class="counts"><b>{{COUNTS}}</b><span>generated from the repo</span></div>
 </div>
-<footer>Generated from the repository. <a href="https://github.com/axzoraharry/second-brain-os">github.com/axzoraharry/second-brain-os</a> · by <a href="https://x.com/undefinedKi" rel="noopener">@undefinedKi</a></footer>
+<footer>Generated from the repository. <a href="https://github.com/axzoraharry/second-brain-os">github.com/axzoraharry/second-brain-os</a> · by <a href="https://github.com/axzoraharry" rel="noopener">Axzora</a> · original by <a href="https://x.com/undefinedKi" rel="noopener">@undefinedKi</a></footer>
 <script>(function(){var b=document.getElementById('theme'),r=document.documentElement,m=matchMedia('(prefers-color-scheme: dark)');function d(){return (r.dataset.theme||(m.matches?'dark':'light'))==='dark'}function p(){b.textContent=d()?'\u2600':'\u263E';b.title=d()?'Light theme':'Dark theme'}b.onclick=function(){var t=d()?'light':'dark';r.dataset.theme=t;try{localStorage.setItem('sbos:theme',JSON.stringify(t))}catch(e){}p()};m.addEventListener('change',p);p()})()</script></body></html>"""
 
 
