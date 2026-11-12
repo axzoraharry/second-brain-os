@@ -1,6 +1,6 @@
-# Second Brain OS
+# Axzora Brain OS
 
-Guides and resources for AI engineers: a course on building agents, five
+Guides and resources for building AI agents that automate real work: a course on building agents, five
 handbooks that go deep on one layer each, hands-on projects, and the links worth
 your time.
 
@@ -9,10 +9,12 @@ every page, term and tool from this repo on one interactive map.
 
 ## Why this repo?
 
-AI engineering moves fast, and the useful parts are scattered across
-whitepapers, engineering blogs and repos. This collects them into one path you
-can follow: theory with sources, a build in every module, and a reading list
-where every entry has a reason to be here. Here you will find:
+Agents are how teams now automate real work: research, outreach, support,
+reporting. Building one that holds up takes more than a prompt. AI engineering
+moves fast, and the useful parts are scattered across whitepapers, engineering
+blogs and repos. This collects them into one path you can follow: theory with
+sources, a build in every module, and a reading list where every entry has a
+reason to be here. Here you will find:
 
 - **The agents course:** seven modules from a single prompt to a production agent, covering context, loops, gates, harnesses, evals and production
 - **Five handbooks** that go deep on one layer each: knowledge graphs, gates, harnesses, loops and evals
@@ -487,9 +489,11 @@ second-brain project implements Andrej Karpathy's LLM wiki pattern, published
 as a [gist](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f)
 on 4 April 2026, plus the parts the gist deliberately leaves undefined.
 
-This repository is a fork of
+Axzora Brain OS is maintained by [Axzora](https://github.com/axzoraharry).
+It is a fork of
 [undefined-ui/second-brain-os](https://github.com/undefined-ui/second-brain-os)
-by [@undefinedKi](https://x.com/undefinedKi). The fork adds
+by [@undefinedKi](https://x.com/undefinedKi), originally published as Second
+Brain OS, and most of the writing here is theirs. The fork adds
 [`repo-checks/`](repo-checks/README.md), a repository health engine and its
 dashboard.
 

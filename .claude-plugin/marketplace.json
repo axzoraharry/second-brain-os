@@ -1,10 +1,10 @@
 {
   "name": "second-brain-os",
   "owner": {
-    "name": "undefinedKi",
-    "url": "https://x.com/undefinedKi"
+    "name": "Axzora",
+    "url": "https://github.com/axzoraharry"
   },
-  "description": "Plugins from the Second Brain OS repo and its agents course.",
+  "description": "Plugins from the Axzora Brain OS repo and its agents course.",
   "plugins": [
     {
       "name": "agents-course",

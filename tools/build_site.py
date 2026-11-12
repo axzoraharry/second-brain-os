@@ -13,7 +13,7 @@ os.makedirs(OUT, exist_ok=True)
 REPO = "https://github.com/axzoraharry/second-brain-os"
 # the bits every page shares: favicon, analytics, author
 ICON = '<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 32 32\'%3E%3Crect width=\'32\' height=\'32\' rx=\'7\' fill=\'%23F7F9F6\'/%3E%3Crect x=\'.5\' y=\'.5\' width=\'31\' height=\'31\' rx=\'6.5\' fill=\'none\' stroke=\'%23D2DACF\'/%3E%3Cpath d=\'M10 21 L16 11 L22 19 M16 11 L23 9\' stroke=\'%231F6B52\' stroke-width=\'1.6\' fill=\'none\'/%3E%3Ccircle cx=\'10\' cy=\'21\' r=\'3\' fill=\'%23F7F9F6\' stroke=\'%231F6B52\' stroke-width=\'1.6\'/%3E%3Ccircle cx=\'16\' cy=\'11\' r=\'3\' fill=\'%23F7F9F6\' stroke=\'%231F6B52\' stroke-width=\'1.6\'/%3E%3Ccircle cx=\'22\' cy=\'19\' r=\'3\' fill=\'%23F7F9F6\' stroke=\'%231F6B52\' stroke-width=\'1.6\'/%3E%3Ccircle cx=\'24\' cy=\'8\' r=\'2\' fill=\'%231F6B52\'/%3E%3C/svg%3E">'
-AUTHOR = ' · by <a href="https://x.com/undefinedKi" rel="noopener">@undefinedKi</a>'
+AUTHOR = ' · by <a href="https://github.com/axzoraharry" rel="noopener">Axzora</a> · original by <a href="https://x.com/undefinedKi" rel="noopener">@undefinedKi</a>'
 
 CSS = """
 :root{
@@ -190,7 +190,7 @@ SEARCHBOX = ('<div class="search"><input id="q" type="search" '
 
 def header(active):
     return f"""<header><div class="bar">
-  <a class="brand" href="index.html">[[ second<span>brain</span>os ]]</a>
+  <a class="brand" href="index.html">[[ axzora<span>brain</span>os ]]</a>
   <nav>
     <a href="index.html" class="{'on' if active=='guide' else ''}">Map</a>
     <a href="resources.html" class="{'on' if active=='res' else ''}">Resources</a>
@@ -268,7 +268,7 @@ for sec, meta in D["sections"].items():
 
 GUIDE = f"""<!DOCTYPE html><html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Second Brain OS - the guide</title>
+<title>Axzora Brain OS - the guide</title>
 <meta name="description" content="A {s['pages']}-page guide to building a knowledge base your AI agent maintains, in plain markdown you own.">
 <style>{CSS}</style></head><body>
 {header('guide')}
@@ -315,7 +315,7 @@ function render(){{
     main.querySelectorAll('svg .node').forEach(n=>n.onclick=()=>{{
       location.hash=D.order[n.dataset.sec][0];
     }});
-    document.title='Second Brain OS - the guide';
+    document.title='Axzora Brain OS - the guide';
     window.scrollTo(0,0); return;
   }}
   const p=P[id], i=FLAT.indexOf(id), prev=FLAT[i-1], next=FLAT[i+1];
@@ -352,7 +352,7 @@ function render(){{
       heads.map((h,n)=>{{h.id='h'+n;return `<a href="#${{id}}" onclick="document.getElementById('h${{n}}').scrollIntoView();return false">${{h.textContent}}</a>`}}).join('')+`</div>`:'')
     +(outs.length?`<div class="grp"><h4>links out</h4>`+
       outs.map(a=>`<a href="${{a.getAttribute('href')}}">${{a.textContent}}</a>`).join('')+`</div>`:'');
-  side(id); document.title=p.title+' - Second Brain OS'; window.scrollTo(0,0);
+  side(id); document.title=p.title+' - Axzora Brain OS'; window.scrollTo(0,0);
 }}
 
 // search
@@ -398,7 +398,7 @@ for r in R:
 
 RES = f"""<!DOCTYPE html><html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<script>try{{var t=JSON.parse(localStorage.getItem('sbos:theme'));if(t==='dark'||t==='light')document.documentElement.dataset.theme=t}}catch(e){{}}</script>{ICON}<title>Second Brain OS - resources</title>
+<script>try{{var t=JSON.parse(localStorage.getItem('sbos:theme'));if(t==='dark'||t==='light')document.documentElement.dataset.theme=t}}catch(e){{}}</script>{ICON}<title>Axzora Brain OS - resources</title>
 <meta name="description" content="{len(R)} checked links: Obsidian plugins by installs, repositories by stars, papers, tools and reading.">
 <style>{CSS}</style>
 </head><body>

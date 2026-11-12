@@ -1,6 +1,6 @@
 # The guides
 
-Guides for AI engineers, grouped by what they teach. New to building agents?
+Guides for building AI agents, grouped by what they teach. New to building agents?
 Start with the course. The handbooks go deep on one layer each, and the second
 brain is a hands-on project that puts the course to work on your own notes.
 
