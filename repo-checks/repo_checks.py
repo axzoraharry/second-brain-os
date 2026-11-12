@@ -386,7 +386,7 @@ def build_report(entries: list[dict[str, Any]], owner: str, mode: str,
         e["checked_at"] = now
         prev_at = prev.get(e.get("full_name"))
         e["previously_checked_at"] = prev_at
-        age = days_since(prev_at)
+        age = days_since(prev_at, _parse_ts(now))
         e["check_age_days"] = age  # how stale the *previous* check was
 
     summary: dict[str, int] = {}

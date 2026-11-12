@@ -677,7 +677,7 @@ function renderInfo(n) {
     h += kicker(n, `${esc(sec.badge)} ${esc(sec.label)} · ${n.pos}/${n.of}`) +
       `<h2>${esc(n.label)}</h2><p class="desc">${esc(n.desc)}</p>` +
       `<div class="meta"><span><b>${n.words?.toLocaleString('en')}</b> words</span><span>~${mins(n.words)} min</span><span><b>${out.length}</b> links out</span><span><b>${inn.length}</b> linked from</span></div>` +
-      `<div class="acts"><button class="btn primary" data-read="${esc(n.id)}">Read the page &rarr;</button>${ghBtn('https://github.com/undefined-ui/second-brain-os/blob/main/' + n.path, 'Source')}</div>` +
+      `<div class="acts"><button class="btn primary" data-read="${esc(n.id)}">Read the page &rarr;</button>${ghBtn('https://github.com/axzoraharry/second-brain-os/blob/main/' + n.path, 'Source')}</div>` +
       group('On this page', P && P.heads.length ? P.heads.map((x, k) => `<button class="li" data-read="${esc(n.id)}" data-anchor="${esc(x.id)}" style="--dot:var(--rule)"><span class="n">${String(k + 1).padStart(2, '0')}</span><span>${esc(x.t)}</span></button>`).join('') : '') +
       group('Links to', listOf(out, id => byId.get(id).sec ? esc(byId.get(byId.get(id).sec).badge) : ''), out.length) +
       group('Linked from', listOf(inn, id => byId.get(id).sec ? esc(byId.get(byId.get(id).sec).badge) : ''), inn.length) +
@@ -792,7 +792,7 @@ function renderReader(n) {
     ((n.terms || []).length ? `<div class="rterms"><h4>terms on this page</h4><div class="chips">${n.terms.slice(0, 18).map(chip).join('')}</div></div>` : '') +
     `<nav class="pager">${prev ? `<a href="#/read/${esc(prev)}" data-node="${esc(prev)}"><span class="lbl">&larr; previous</span>${esc(byId.get(prev).label)}</a>` : '<span></span>'}` +
     `${next ? `<a href="#/read/${esc(next)}" data-node="${esc(next)}" style="text-align:right"><span class="lbl">next &rarr;</span>${esc(byId.get(next).label)}</a>` : '<span></span>'}</nav>` +
-    `<div class="src">source: <a class="ext" href="https://github.com/undefined-ui/second-brain-os/blob/main/${esc(n.path)}" target="_blank" rel="noopener">${esc(n.path)}</a></div>`;
+    `<div class="src">source: <a class="ext" href="https://github.com/axzoraharry/second-brain-os/blob/main/${esc(n.path)}" target="_blank" rel="noopener">${esc(n.path)}</a></div>`;
   rScroll.style.scrollBehavior = 'auto';
   rScroll.scrollTop = 0;
   if (pendingAnchor) { const el = rBody.querySelector('#' + CSS.escape(pendingAnchor)); if (el) setTimeout(() => el.scrollIntoView({ behavior: 'smooth' }), 450); pendingAnchor = null; }
@@ -1004,7 +1004,7 @@ function failed(err) {
   document.body.classList.remove('booting');
   const d = document.createElement('div');
   d.className = 'fail';
-  d.innerHTML = '<div><p>The 3D map needs WebGL, which is not available here.</p><p><a href="https://github.com/undefined-ui/second-brain-os/tree/main/docs">Read the guide on GitHub</a></p></div>';
+  d.innerHTML = '<div><p>The 3D map needs WebGL, which is not available here.</p><p><a href="https://github.com/axzoraharry/second-brain-os/tree/main/docs">Read the guide on GitHub</a></p></div>';
   document.body.appendChild(d);
 }
 window.__sbos = { graph, S, byId }; // for poking at the graph from the console

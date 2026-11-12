@@ -11,8 +11,8 @@ import io, json, os, re
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
-GH = "https://github.com/undefined-ui/second-brain-os/blob/main/"
-GHT = "https://github.com/undefined-ui/second-brain-os/tree/main/"
+GH = "https://github.com/axzoraharry/second-brain-os/blob/main/"
+GHT = "https://github.com/axzoraharry/second-brain-os/tree/main/"
 
 COMMAND_GROUPS = {
     "ingestion": ["ingest", "ingest-url", "ingest-youtube", "ingest-pdf",
@@ -346,7 +346,8 @@ footer{border-top:1px solid var(--rule);padding:22px;text-align:center;color:var
     <a href="index.html">Map</a>
     <a href="resources.html">Resources</a>
     <a href="tree.html" class="on">Tree</a>
-    <a href="https://github.com/undefined-ui/second-brain-os">Repo</a>
+    <a href="repo-checks/dashboard.html">Repo health</a>
+    <a href="https://github.com/axzoraharry/second-brain-os">Repo</a>
   </nav>
   <button class="theme" id="theme" aria-label="Switch between light and dark theme">&#9790;</button>
 </div></header>
@@ -360,7 +361,7 @@ footer{border-top:1px solid var(--rule);padding:22px;text-align:center;color:var
   <div class="cols">{{TREE}}</div>
   <div class="counts"><b>{{COUNTS}}</b><span>generated from the repo</span></div>
 </div>
-<footer>Generated from the repository. <a href="https://github.com/undefined-ui/second-brain-os">github.com/undefined-ui/second-brain-os</a> · by <a href="https://x.com/undefinedKi" rel="noopener">@undefinedKi</a></footer>
+<footer>Generated from the repository. <a href="https://github.com/axzoraharry/second-brain-os">github.com/axzoraharry/second-brain-os</a> · by <a href="https://x.com/undefinedKi" rel="noopener">@undefinedKi</a></footer>
 <script>(function(){var b=document.getElementById('theme'),r=document.documentElement,m=matchMedia('(prefers-color-scheme: dark)');function d(){return (r.dataset.theme||(m.matches?'dark':'light'))==='dark'}function p(){b.textContent=d()?'\u2600':'\u263E';b.title=d()?'Light theme':'Dark theme'}b.onclick=function(){var t=d()?'light':'dark';r.dataset.theme=t;try{localStorage.setItem('sbos:theme',JSON.stringify(t))}catch(e){}p()};m.addEventListener('change',p);p()})()</script></body></html>"""
 
 
